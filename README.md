@@ -1,22 +1,14 @@
 # gd-gatsby-blog
 My personal website.
 
-
 ## Development
 
 ```shell
 gatsby develop  # or yarn dev
 ```
 
-## Production
+## Deploy on [Netlify](https://app.netlify.com)
 
 ```shell
-gatsby build  # or yarn build
-gatsby serve-build
-```
-
-## Deploy
-
-```shell
-yarn deploy
+gatsby build
 ```

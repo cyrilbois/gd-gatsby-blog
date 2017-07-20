@@ -55,8 +55,8 @@ class Template extends React.Component {
     } else {
       header = (
         <header>
-          <h3 style={style.h3}><Link style={style.Link} to={prefixLink('/')} > <img src={prefixLink('/icon.png')} style={style.img}/> {config.blogTitle} </Link></h3>
-          {/* <h3 style={style.h3}><Link style={style.Link} to={prefixLink('/')} > {config.blogTitle} </Link></h3> */}
+          {/* <h3 style={style.h3}><Link style={style.Link} to={prefixLink('/')} > <img src={prefixLink('/icon.png')} style={style.img}/> {config.blogTitle} </Link></h3> */}
+          <h3 style={style.h3}><Link style={style.Link} to={prefixLink('/')} > {config.blogTitle} </Link></h3>
         </header>
       )
     }

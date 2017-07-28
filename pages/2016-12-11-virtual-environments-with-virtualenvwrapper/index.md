@@ -5,6 +5,8 @@ layout: post
 path: "/virtual-environments-with-virtualenvwrapper/"
 tags:
   - Python
+  - Virtual environments
+readNext: "/pipenv/"
 ---
 
 `virtualenvwrapper` is a set of shell functions built on top of the `virtualenv` python module, and make it even easier to create and manage python virtual environments.

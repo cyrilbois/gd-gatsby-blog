@@ -14,14 +14,14 @@ import moment from 'moment'
 const style = {
   post: {
     marginBottom: rhythm(1),
-    listStyle: 'none'
+    listStyle: 'none',
   },
   Link: {
   },
   date: {
     fontSize: rhythm(1 / 2),
-    color: 'gray'
-  }
+    color: 'gray',
+  },
 }
 
 class BlogIndex extends React.Component {
@@ -39,7 +39,8 @@ class BlogIndex extends React.Component {
             {title}
             </Link>
             <div style={style.date}>
-              {moment(page.data.date).calendar()}
+              {/* {moment(page.data.date).calendar()} */}
+              {moment(page.data.date).format('MMMM Do YYYY')}
             </div>
             <Summary body={page.data.body} />
           </li>
@@ -47,20 +48,20 @@ class BlogIndex extends React.Component {
       }
     })
     return (
-    <DocumentTitle title={config.blogTitle}>
-      <div>
-        <Bio />
-        <ul>
-          {pageLinks}
-        </ul>
-      </div>
-    </DocumentTitle>
+      <DocumentTitle title={config.blogTitle}>
+        <div>
+          <Bio />
+          <ul>
+            {pageLinks}
+          </ul>
+        </div>
+      </DocumentTitle>
     )
   }
 }
 
 BlogIndex.propTypes = {
-  route: React.PropTypes.object
+  route: React.PropTypes.object,
 }
 
 export default BlogIndex

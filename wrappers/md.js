@@ -17,19 +17,19 @@ import 'css/article.css'
 
 const style = {
   h1: {
-    marginTop: 0
+    marginTop: 0,
   },
   hr: {
-    marginBottom: rhythm(2)
+    marginBottom: rhythm(2),
   },
   Tags: {
-    marginBottom: rhythm(1)
+    marginBottom: rhythm(1),
   },
   date: {
     marginBottom: rhythm(1 / 2),
     fontSize: rhythm(1 / 2),
-    color: 'gray'
-  }
+    color: 'gray',
+  },
 }
 
 class MarkdownWrapper extends React.Component {
@@ -46,10 +46,11 @@ class MarkdownWrapper extends React.Component {
       <div className="markdown">
         <h1 style={style.h1}>{post.title}</h1>
         {!post.date ? null : <div style={style.date}>
-                               {`Posted ${moment(post.date).calendar().toLowerCase()}`}
+                               {/* {`Posted ${moment(post.date).calendar().toLowerCase()}`} */}
+                               {`Posted on ${moment(post.date).format('MMMM Do YYYY, h:mm a')}`}
                              </div>}
         <Tags post={post} style={style.Tags} />
-        <div className="article" ref="markdown" dangerouslySetInnerHTML={{__html: post.body}} />
+        <div className="article" ref="markdown" dangerouslySetInnerHTML={{ __html: post.body }} />
         <hr style={style.hr} />
         <ReadNext post={post} pages={route.pages} />
         <Bio />
@@ -66,11 +67,11 @@ class MarkdownWrapper extends React.Component {
 }
 
 MarkdownWrapper.propTypes = {
-  route: React.PropTypes.object
+  route: React.PropTypes.object,
 }
 
 MarkdownWrapper.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: React.PropTypes.object.isRequired,
 }
 
 export default MarkdownWrapper

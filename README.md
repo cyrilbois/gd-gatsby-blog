@@ -1,4 +1,6 @@
 # gd-gatsby-blog
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jackdbd/gd-gatsby-blog.svg)](https://greenkeeper.io/)
 My personal website.
 
 ## Development

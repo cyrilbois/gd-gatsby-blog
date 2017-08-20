@@ -38,7 +38,7 @@ const Types = {
     );
   },
   twitter(props) {
-    const twitterUrl = `https://github.com/${siteMetadata.twitter}`
+    const twitterUrl = `https://twitter.com/${siteMetadata.twitter}`
     return (
       <ExternalLink hoverColor="#1da1f2" href={twitterUrl} {...props}>
         <TwitterIcon size={32} />

@@ -1,0 +1,53 @@
+.markdown li code,
+.markdown p code {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -hp-pre-wrap;
+    word-wrap: break-word;
+    background: #eee;
+    border: 1px solid #ccc;
+    display: inline;
+    font-family: Inconsolata, monospace, serif;
+    max-width: 100%;
+    padding: 0 .1625rem
+}
+
+.markdown li a code,
+.markdown p a code {
+    text-shadow: none;
+    text-decoration: underline
+}
+
+.markdown li a code:hover,
+.markdown p a code:hover {
+    text-shadow: none;
+    background-image: none;
+    background-color: #ffd897;
+    border: 1px solid #ffd897
+}
+
+.markdown pre {
+    background: #eee
+}
+
+.markdown pre code {
+    padding: .5rem;
+    border: none;
+    display: inline-block;
+    white-space: inherit;
+    word-wrap: normal;
+    line-height: 1rem;
+    background-image: none
+}
+
+blockquote {
+    padding-left: 16.875px;
+    border-left: 6px solid #d3d3d3;
+    margin-left: 10.875px;
+    margin-right: 0;
+    padding-right: 0
+}

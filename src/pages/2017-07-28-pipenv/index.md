@@ -292,3 +292,47 @@ Finally, you can have a look at the packages available in this virtual environme
 ```shell
 pip list
 ```
+
+
+## Pipenv and Travis CI
+I use Pipenv for [dash-earthquakes](https://github.com/jackdbd/dash-earthquakes), a very simple dashboard that displays the most recent eathquakes in the world (if you are interested in how I created this application, I wrote an [article](https://www.giacomodebidda.com/visualize-earthquakes-with-plotly-dash/) about it).
+
+I wanted to setup [Travis](https://travis-ci.org/) for this project, but it took me a while to figure out how to use pipenv in this environment. A possible solution comes from the [pipenv advanced documentation](http://docs.pipenv.org/en/latest/advanced.html): use a `Makefile` to install pipenv and run the tests.
+
+Here is how the `Makefile` looks like.
+
+```Makefile
+help:
+	@echo '    init'
+	@echo '        install pipenv and all project dependencies'
+	@echo '    test'
+	@echo '        run all tests'
+
+init:
+	@echo 'Install python dependencies'
+	pip install pipenv
+	pipenv install
+
+test:
+	@echo 'Run all tests'
+	pipenv run py.test tests
+```
+
+And here is a basic `.travis.yml` file.
+
+```yaml
+language: python
+python:
+  - 3.5
+  - 3.6
+install:
+  - make init
+script:
+  - make test
+```
+
+
+## Pipen and PyUp
+I usually keep track of my Python dependencies with the [PyUp](https://pyup.io/) bot. Unfortunately, it seems that PyUp does not support pipenv at the moment.
+
+Of course you can activate the virtual environment and create a `requirements.txt` with `pip freeze > requirements.txt`, but you would still need to check that file in, to make it available for PyUp. That is confusing, because pipenv don't use requirement files.

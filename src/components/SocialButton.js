@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import GithubIcon from 'react-icons/lib/fa/github';
 import TwitterIcon from 'react-icons/lib/fa/twitter';
+// import FeedIcon from 'react-icons/lib/fa/feed';
+import FeedIcon from 'react-icons/lib/fa/rss-square';
 import { siteMetadata } from '../../gatsby-config'
 
 const Container = styled.div`
@@ -45,7 +47,16 @@ const Types = {
       </ExternalLink>
     );
   },
+  feed(props) {
+    const rssFeedUrl = siteMetadata.rssFeed;
+    return (
+      <ExternalLink hoverColor="#ff8c00" href={rssFeedUrl} {...props}>
+        <FeedIcon size={32} />
+      </ExternalLink>
+    );
+  },
 };
+
 
 export default function SocialButton({ type, ...rest }) {
   const Type = Types[type];

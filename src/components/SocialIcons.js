@@ -19,6 +19,7 @@ export default function Social(props) {
     <SocialContainer {...props}>
       <SocialButton className="button" type="github" {...props} />
       <SocialButton className="button" type="twitter" {...props} />
+      <SocialButton className="button" type="feed" {...props} />
     </SocialContainer>
   );
 }

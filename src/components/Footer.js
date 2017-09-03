@@ -15,7 +15,7 @@ export default function Footer() {
   // http://www.colorhexa.com/
   const colors = {
     color: `rgba(44, 62, 80, 0.8)`,
-    hoverColor: `rgba(52, 152, 219, 1)`
+    // hoverColor: `rgba(52, 152, 219, 1)`
   }
   return (
     <Container>

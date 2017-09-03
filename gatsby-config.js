@@ -4,6 +4,7 @@ module.exports = {
     author: 'Giacomo Debidda',
     github: 'jackdbd',
     twitter: 'jackdbd',
+    rssFeed: 'https://feed43.com/3566832732867236.xml',
   },
   plugins: [
     {

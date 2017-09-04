@@ -4,6 +4,7 @@ module.exports = {
     author: 'Giacomo Debidda',
     github: 'jackdbd',
     twitter: 'jackdbd',
+    contentDescription: "Giacomo Debidda's Personal Blog",
     siteUrl: 'https://www.giacomodebidda.com',
     rssFeed: 'https://feed43.com/3566832732867236.xml',
   },

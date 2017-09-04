@@ -2,6 +2,7 @@ import React from "react"
 import Link from "gatsby-link"
 import get from "lodash/get"
 import Helmet from "react-helmet"
+import { siteMetadata } from '../../gatsby-config.js'
 import Bio from "../components/Bio"
 import { rhythm } from "../utils/typography"
 import '../css/blog-post.css'
@@ -13,7 +14,10 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
-        <Helmet title={get(this, "props.data.site.siteMetadata.title")} />
+        <Helmet>
+          <title>{get(this, "props.data.site.siteMetadata.title")}</title>
+          <meta name="description" content={siteMetadata.contentDescription} />
+        </Helmet>
         <Bio />
         {posts.map(post => {
           if (post.node.path !== "/404/") {

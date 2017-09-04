@@ -4,6 +4,7 @@ module.exports = {
     author: 'Giacomo Debidda',
     github: 'jackdbd',
     twitter: 'jackdbd',
+    siteUrl: 'https://www.giacomodebidda.com',
     rssFeed: 'https://feed43.com/3566832732867236.xml',
   },
   plugins: [
@@ -13,6 +14,9 @@ module.exports = {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
     },
     {
       resolve: 'gatsby-transformer-remark',

@@ -49,6 +49,12 @@ module.exports = {
         trackingId: 'UA-41577057-1',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-N69LK3M',
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {

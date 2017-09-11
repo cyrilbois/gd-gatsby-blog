@@ -1,6 +1,6 @@
 ---
 title: A simple git hook for your Python projects
-date: "2017-09-10T23:30:03.284Z"
+date: "2017-09-10T21:30:03.284Z"
 layout: post
 path: "/a-simple-git-hook-for-your-python-projects/"
 tags:

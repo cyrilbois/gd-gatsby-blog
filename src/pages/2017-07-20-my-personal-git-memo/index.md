@@ -20,6 +20,7 @@ Here is an unordered list of git commands, configurations, tricks, articles, got
 - Configure git aliases
 - Commit only part of a file
 - Git hooks
+- Discard changes to git submodules
 
 ---
 
@@ -202,3 +203,14 @@ I think the most useful hooks are
 It would be nice to have a pre-merge hook, so we could prevent a feature branch from merging into master if certain conditions are not met (e.g. your tests fail). Since a pre-merge hook is not available, you'll have to [write it]((https://stackoverflow.com/questions/19102714/how-would-i-write-a-pre-merge-hook-in-git).
 
 Reference [here](https://www.atlassian.com/git/tutorials/git-hooks).
+
+
+## Discard changes to Git submodules
+
+I think it happened only once to me, but I had to reset all submodules with this line:
+
+```shell
+git submodule foreach git reset --hard
+```
+
+Reference [here](https://kalyanchakravarthy.net/blog/git-discard-submodule-changes/).

@@ -60,7 +60,7 @@ Maybe you have heard about [fuzzing](https://en.wikipedia.org/wiki/Fuzzing), and
 
 ## A better solution: fuzzing and ddt
 
-You can create a pair of random floats, so every time you run the test you have a new test case. That's a bit dangerous, because if you have a failure you cannot reproduce it easily.
+You can create a pair of random floats, so every time you run the test you have a new test case. That's a bit dangerous though, because if you have a failure you cannot reproduce it easily.
 
 ```python
 # test_example.py
@@ -258,7 +258,7 @@ if __name__ == '__main__':
     test_add_numbers()
 ```
 
-This test will generate some `nan` and `inf` inputs, `add_numbers` will raise either `NaNIsNotAllowed` or `InfIsNotAllowed` and the test will catch these exceptions and reject them as test failures.
+This test will generate some `nan` and `inf` inputs, `add_numbers` will raise either `NaNIsNotAllowed` or `InfIsNotAllowed` and the test will catch these exceptions and reject them as test failures (i.e. the test case will be considered a success when either `NaNIsNotAllowed` or `InfIsNotAllowed` occurs).
 
 Can you really afford to reject `nan` as an input value for `add_numbers`? Maybe not. Let's say your code needs to sum two samples in a time series, and one sample of the time series is missing: `nan` would be a perfectly valid input for `add_numbers` in such case.
 

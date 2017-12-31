@@ -5,9 +5,9 @@ layout: post
 path: "/interesting-things-other-people-did-in-2017/"
 ---
 
-At the end of the year I like to compile a list of things I stumbled upon during the year and that I found interesting. It's an idea I adopted from Jeff Leek's blog [simply statistics](https://simplystatistics.org/).
+I like to compile a list of things I stumbled upon during the year and that I found interesting. It's an idea I adopted from Jeff Leek's blog [simply statistics](https://simplystatistics.org/). If you are curious, here is the list from [2016](https://www.giacomodebidda.com/interesting-things-other-people-did-in-2016/).
 
-If you are curious, here is the list from [2016](https://www.giacomodebidda.com/interesting-things-other-people-did-in-2016/).
+Here is the list for 2017:
 
 - Genius.com created a cool infographic about [how Dragon Ball influenced a generation of hip hop artists](https://genius.com/a/infographic-how-dragon-ball-influenced-a-generation-of-hip-hop-artists).
 - Nadieh Bremer created this amazing visualization of [all fights in Dragon Ball Z](http://www.datasketch.es/january/code/nadieh/) for her one year long project [datasketches](http://www.datasketch.es). The amount of awesome things that both Nadieh and Shirley managed to do this year is just insane. Every time I had a look at their projects I was left wondering: "can I really use D3 to make *this*?"
@@ -18,12 +18,12 @@ If you are curious, here is the list from [2016](https://www.giacomodebidda.com/
 - [unitethesefuckers](http://unitethesefuckers.com/) is a news aggregator that helps you in getting a balanced perspective of what liberals and conservatives are reading.
 - Vicki Boykis wrote [this article on how Facebook is collecting your data](http://veekaybee.github.io/2017/02/01/facebook-is-collecting-this/). I was already considering quitting Facebook for some time. This piece gave me the final push.
 - Sasha Trubetskoy made [this cool subway-style map of Roman roads](http://sashat.me/2017/06/03/roman-roads/?utm_source=hackernewsletter&utm_medium=email&utm_term=fav).
-- Matt Stiles created the visualization [how common is your birthday](http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/). I didn't know that September was the busiest month for births.
+- Matt Stiles created the visualization [how common is your birthday](http://thedailyviz.com/2016/09/17/how-common-is-your-birthday-dailyviz/). I didn't know that September was the busiest month for births. Apparently the 16th of April (my birthday) is not so common.
 - Matt also published [Visualizing more than a decade of North Korean defections](http://thedailyviz.com/2017/12/22/visualizing-more-than-a-decade-of-north-korean-defections/). I was really surprised to discover that North Korean women are three times more likely to defect than men.
 - Ben Eater wrote a comprehensive guide on [how to build an 8-bit computer from scratch](https://eater.net/?utm_source=hackernewsletter&utm_medium=email&utm_term=fav).
 - Stefan Zapf and Christopher Kraushaar created a [solar correlation map](https://www.oreilly.com/learning/a-new-visualization-to-beautifully-explore-correlations?imm_mid=0ed213&cmp=em-data-na-na-newsltr_20170208). I really like this new way of representing correlation, and I started making my own version with D3 and Vue.js (they used matplotlib). I will post it here on the blog when it's ready.
 - Eric Roston and Blacki Migliozzi wrote the series of articles [How a Melting Arctic Changes Everything](https://www.bloomberg.com/graphics/2017-arctic/)
-- Going from North Pole to South Pole, the New York Times [series of articles about Antarctica](https://www.nytimes.com/interactive/2017/05/18/climate/antarctica-ice-melt-climate-change.html?_r=0) was a visual masterpiece.
+- Going from North Pole to South Pole, the New York Times published a [series of articles about Antarctica](https://www.nytimes.com/interactive/2017/05/18/climate/antarctica-ice-melt-climate-change.html?_r=0). It's a visual masterpiece.
 - Ideo created this nice [Font map](http://fontmap.ideo.com/).
 - Russell Goldenberg and Dan Kopf created a cool dataviz about [the unlikely odds of making it big](https://pudding.cool/2017/01/making-it-big/).
 - The Pudding kept publishing a lot of really good stuff. I particularly liked this piece by Colin Morris: [are Pop Lyrics Getting More Repetitive?](https://pudding.cool/2017/05/song-repetition/)
@@ -35,4 +35,4 @@ If you are curious, here is the list from [2016](https://www.giacomodebidda.com/
 - [yegor256's blog](http://www.yegor256.com/best.html) has been a great discovery in 2017. His blog posts and his book [Elegant Objects](http://www.yegor256.com/elegant-objects.html) literally changed the way I think about object oriented code.
 - The Center for Spatial Research at Columbia University, and the Masters in Peace Building at the Universidad de Los Andes collaborated in creating [Conflict Urbanism: Colombia](https://centerforspatialresearch.github.io/colombia_site/). The project maps and visualizes crimes committed over a period of 30 years, with the hope of understanding the patterns and ramifications of the Colombian conflict.
 - Marco Hernandez and Darren Long created a dataviz on [the power of your passport](http://multimedia.scmp.com/culture/article/passportIndex/). South China Morning Post kept publishing really nice visualizations all year around. Here is [another one](http://multimedia.scmp.com/news/china/article/One-Belt-One-Road/europe.html).
-- [This guy made a camera that prints a GIF instantly](https://imgur.com/gallery/CG9w4?utm_source=hackernewsletter&utm_medium=email&utm_term=fav). I know, it's quite unrelated to the usual topics that I talk about (dataviz, python/js libraries), but it was too cool not to share it.
+- [This guy made a camera that prints a GIF instantly](https://imgur.com/gallery/CG9w4?utm_source=hackernewsletter&utm_medium=email&utm_term=fav). I know, it's not related to data visualizations, programming topics or python/js libraries, but it was just too cool not to share it.

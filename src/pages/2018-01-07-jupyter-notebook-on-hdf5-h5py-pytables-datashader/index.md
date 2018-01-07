@@ -1,6 +1,6 @@
 ---
 title: Jupyter notebook on HDF5, h5py, PyTables, Datashader
-date: "2017-12-31T16:00:03.284Z"
+date: "2018-01-06T21:00:03.284Z"
 layout: post
 path: "/jupyter-notebook-on-hdf5-h5py-pytables-datashader/"
 ---

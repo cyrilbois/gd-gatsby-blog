@@ -9,8 +9,7 @@ const Container = styled.footer`
   padding: 1rem 0.5rem;
 `;
 
-
-export default function Footer() {
+const Footer = () => {
   // https://www.materialui.co/
   // http://www.colorhexa.com/
   const colors = {
@@ -23,3 +22,5 @@ export default function Footer() {
     </Container>
   );
 }
+
+export default Footer

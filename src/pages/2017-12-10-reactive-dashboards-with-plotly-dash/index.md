@@ -8,7 +8,7 @@ tags:
   - Dash
 ---
 
-Last month I gave a talk at [PyMunich](https://www.meetup.com/it-IT/PyMunich/?chapter_analytics_code=UA-98366748-2) on how to create reactive dashboards with Plotly [Dash](https://plot.ly/products/dash/).
+Last month I gave a talk at [PyMunich](https://www.meetup.com/it-IT/PyMunich/) on how to create reactive dashboards with Plotly [Dash](https://plot.ly/products/dash/).
 
 I have already written about Dash [here](https://www.giacomodebidda.com/visualize-earthquakes-with-plotly-dash/), and the weekend before the presentation I managed to deploy [another dashboard](https://github.com/jackdbd/dash-fda) on [Heroku](https://mighty-garden-67470.herokuapp.com/).
 

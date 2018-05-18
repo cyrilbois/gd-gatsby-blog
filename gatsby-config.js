@@ -43,12 +43,13 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-N69LK3M',
-      },
-    },
+    // Remove Google Tag Manager to disable tracking by Google Analytics
+    // {
+    //   resolve: 'gatsby-plugin-google-tagmanager',
+    //   options: {
+    //     id: 'GTM-N69LK3M',
+    //   },
+    // },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {

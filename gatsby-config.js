@@ -1,11 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Giacomo Debidda',
+    author: 'Giacomo Debidda',
+    github: 'jackdbd',
+    twitter: 'jackdbd',
+    description: "Giacomo Debidda's Personal Blog",
+    siteUrl: 'https://www.giacomodebidda.com',
+    rssFeed: 'https://feed43.com/3566832732867236.xml',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/gd-gatsby-blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,23 +41,24 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    // Remove Google Tag Manager to disable tracking by Google Analytics
+    // {
+    //   resolve: 'gatsby-plugin-google-tagmanager',
+    //   options: {
+    //     id: 'GTM-N69LK3M',
+    //   },
+    // },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Giacomo Debidda`,
+        short_name: `giacomodebidda`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`,
+        // icon: `src/assets/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,

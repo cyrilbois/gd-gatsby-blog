@@ -1,17 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import { rhythm, scale } from '../utils/typography'
+import { siteMetadata } from '../../gatsby-config.js'
 
 class Template extends React.Component {
   render() {
+    const websiteTitle = siteMetadata.title
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
     if (location.pathname === rootPath) {
+      {
+        /* header on the home page */
+      }
       header = (
-        <h1
+        <span
           style={{
             ...scale(1.5),
             marginBottom: rhythm(1.5),
@@ -26,11 +30,14 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            {websiteTitle}
           </Link>
-        </h1>
+        </span>
       )
     } else {
+      {
+        /* header on the any other page (e.g. a blog post page) */
+      }
       header = (
         <h3
           style={{
@@ -47,7 +54,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            {websiteTitle}
           </Link>
         </h3>
       )

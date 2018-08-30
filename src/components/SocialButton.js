@@ -23,21 +23,19 @@ const Link = styled.a`
 
 class GithubIcon extends React.Component {
   render() {
-    return(
-      <FaGithub size={32} />
-    )
+    return <FaGithub size={32} />
   }
 }
 
 class TwitterIcon extends React.Component {
   render() {
-    return(<FaTwitter size={32} />)
+    return <FaTwitter size={32} />
   }
 }
 
 class FeedIcon extends React.Component {
   render() {
-    return(<FaRssSquare size={32} />)
+    return <FaRssSquare size={32} />
   }
 }
 
@@ -76,14 +74,13 @@ const Types = {
   },
 }
 
-function SocialButton ({type, ...rest}) {
+function SocialButton({ type, ...rest }) {
   const Type = Types[type]
   return (
     <Container {...rest}>
       <Type {...rest} />
     </Container>
   )
-
 }
 
 export default SocialButton

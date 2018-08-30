@@ -8,7 +8,12 @@ module.exports = {
     siteUrl: 'https://www.giacomodebidda.com',
     rssFeed: 'https://feed43.com/3566832732867236.xml',
   },
-  pathPrefix: '/gd-gatsby-blog',
+  /*
+    Use pathPrefix if your site is hosted at something other than the root of
+    the domain. E.g. example.com/blog/ instead of example.com
+    https://www.gatsbyjs.org/docs/path-prefix/
+  */
+  // pathPrefix: '/blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,6 +26,10 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          /*
+            gatsby-remark-images processes images in markdown so they can be
+            used in the production build.
+          */
           {
             resolve: `gatsby-remark-images`,
             options: {

@@ -27,7 +27,7 @@ const Bio = () => {
             width: rhythm(2),
             height: rhythm(2),
           }}
-        />        
+        />
         Written by <strong>{siteMetadata.author}</strong>, Pythonista & JS lover
         (D3, React). You can find me on <a href={twitterUrl}>Twitter</a> &amp;{' '}
         <a href={githubUrl}>Github</a>

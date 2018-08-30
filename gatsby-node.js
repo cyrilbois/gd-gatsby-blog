@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    path
                   }
                 }
               }
@@ -31,8 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(result.errors)
           reject(result.errors)
         }
-
-        // Create blog posts pages.
+        
         const posts = result.data.allMarkdownRemark.edges;
 
         _.each(posts, (post, index) => {
@@ -40,7 +40,8 @@ exports.createPages = ({ graphql, actions }) => {
           const next = index === 0 ? null : posts[index - 1].node;
 
           createPage({
-            path: post.node.fields.slug,
+            // path: post.node.fields.slug,
+            path: post.node.frontmatter.path,
             component: blogPost,
             context: {
               slug: post.node.fields.slug,

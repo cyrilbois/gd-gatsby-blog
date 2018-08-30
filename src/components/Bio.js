@@ -1,36 +1,41 @@
 import React from 'react'
+
+// Import typefaces
+import 'typeface-montserrat'
+import 'typeface-merriweather'
+
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
-import { siteMetadata } from '../../gatsby-config'
-// import typefaces
-// import 'typeface-montserrat'
-// import 'typeface-merriweather'
 
-const Bio = () => {
-  const twitterUrl = `https://twitter.com/${siteMetadata.twitter}`
-  const githubUrl = `https://github.com/${siteMetadata.github}`
-
-  return (
-    <div>
-      <p>
+class Bio extends React.Component {
+  render() {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          marginBottom: rhythm(2.5),
+        }}
+      >
         <img
           src={profilePic}
-          alt={siteMetadata.author}
+          alt={`Kyle Mathews`}
           style={{
-            float: 'left',
-            marginRight: rhythm(1 / 4),
+            marginRight: rhythm(1 / 2),
             marginBottom: 0,
             width: rhythm(2),
             height: rhythm(2),
           }}
         />
-        Written by <strong>{siteMetadata.author}</strong>, Pythonista & JS lover (D3, React). You can find me on{' '}
-        <a href={twitterUrl}>Twitter</a>{' '}
-        &amp;{' '}
-        <a href={githubUrl}>Github</a>
-      </p>
-    </div>
+        <p>
+          Written by <strong>Kyle Mathews</strong> who lives and works in San
+          Francisco building useful things.{' '}
+          <a href="https://twitter.com/kylemathews">
+            You should follow him on Twitter
+          </a>
+        </p>
+      </div>
     )
+  }
 }
 
 export default Bio

@@ -1,32 +1,21 @@
-import ReactDOM from 'react-dom/server';
-import React from 'react';
-import Typography from 'typography';
-import CodePlugin from 'typography-plugin-code';
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
+import Typography from 'typography'
+import Wordpress2016 from 'typography-theme-wordpress-2016'
 
+Wordpress2016.overrideThemeStyles = () => ({
+  'a.gatsby-resp-image-link': {
+    boxShadow: 'none',
+  },
+})
 
-const options = {
-  baseFontSize: '18px',
-  baseLineHeight: 1.5,
-  headerFontFamily: ['Segoe UI', 'Helvetica Neue', 'sans-serif'],
-  bodyFontFamily: ['Helvetica Neue', 'sans-serif'],
-  scaleRatio: 2.25,
-  plugins: [new CodePlugin()],
-  overrideStyles: ({ rhythm, scale }, options) => ({
-    [MOBILE_MEDIA_QUERY]: {
-      // Make baseFontSize on mobile 16px.
-      html: {
-        fontSize: `${16 / 16 * 100}%`,
-      },
-    },
-  }),
-};
+delete Wordpress2016.googleFonts
 
-const typography = new Typography(options);
+const typography = new Typography(Wordpress2016)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
-  typography.injectStyles();
+  typography.injectStyles()
 }
 
-export default typography;
+export default typography
+export const rhythm = typography.rhythm
+export const scale = typography.scale

@@ -33,6 +33,17 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          {
+            resolve: `gatsby-remark-highlights`,
+            options: {
+                // Remove syntax-- from Atom's CSS theme
+                scopePrefix: 'syntax--',
+                // if set, codeWrap wraps the code in a <div>
+                // codeWrap: {
+                //   className: 'editor-container'
+                // }
+              }
+          },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',

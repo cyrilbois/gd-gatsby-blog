@@ -6,6 +6,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
 import Footer from '../components/Footer'
+import '../css/atom-dark-syntax.css'
 
 class BlogIndex extends React.Component {
   render() {

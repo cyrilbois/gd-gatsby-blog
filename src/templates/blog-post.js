@@ -19,6 +19,7 @@ const P = styled.p`
   line-height: ${props => props.lineHeight};
 `
 
+// This doesn't work. Maybe I have to use gatsby-plugin-styled-components?
 const Ul = styled.ul`
   display: 'flex';
   flex-wrap: 'wrap';
@@ -27,10 +28,16 @@ const Ul = styled.ul`
   padding: 0;
 `
 
+const Li = styled.li`
+  margin: 2px;
+  padding: 0.25em;
+  background-color: #d3d3d3;
+`
+
 class BlogPostTemplate extends React.Component {
   render() {
-    // console.log('DATA', this.props.data)
     const post = this.props.data.markdownRemark
+    const tags = post.frontmatter.tags || []
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = get(
       this,
@@ -38,18 +45,18 @@ class BlogPostTemplate extends React.Component {
     )
     const { previous, next } = this.props.pageContext
 
-    if (!post) {
-      console.warn(
-        'post',
-        post,
-        'markdownRemark',
-        this.props.data.markdownRemark,
-        'data',
-        this.props.data,
-        'location',
-        this.props.location
-      )
-    }
+    // if (!post) {
+    //   console.warn(
+    //     'post',
+    //     post,
+    //     'markdownRemark',
+    //     this.props.data.markdownRemark,
+    //     'data',
+    //     this.props.data,
+    //     'location',
+    //     this.props.location
+    //   )
+    // }
 
     return (
       <Layout location={this.props.location}>
@@ -62,10 +69,20 @@ class BlogPostTemplate extends React.Component {
         <P marginTop={rhythm(-1)} marginBottom={rhythm(1)} {...scale(-0.2)}>
           {`${post.frontmatter.date} | ${post.timeToRead} min Read`}
         </P>
+        <ul style={{ listStyle: 'none', display: 'inline-flex' }}>
+          {tags.map(t => {
+            return <Li>{t}</Li>
+          })}
+        </ul>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <ul style={{ listStyle: 'none', display: 'inline-flex' }}>
+          {tags.map(t => {
+            return <Li>{t}</Li>
+          })}
+        </ul>
         <Hr marginBottom={rhythm(1)} />
         <Bio />
-        <Ul>
+        <ul style={{ listStyle: 'none' }}>
           {previous && (
             <li>
               <Link to={previous.fields.slug} rel="prev">
@@ -80,7 +97,7 @@ class BlogPostTemplate extends React.Component {
               </Link>
             </li>
           )}
-        </Ul>
+        </ul>
       </Layout>
     )
   }
@@ -127,6 +144,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

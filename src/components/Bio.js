@@ -11,12 +11,16 @@ const Div = styled.div`
   margin-bottom: 0;
 `
 
+const P = styled.p`
+  margin-bottom: ${props => props.marginBottom};
+`
+
 const Bio = () => {
   const twitterUrl = `https://twitter.com/${siteMetadata.twitter}`
   const githubUrl = `https://github.com/${siteMetadata.github}`
   return (
     <Div>
-      <p>
+      <P marginBottom={rhythm(0.5)}>
         <img
           src={profilePic}
           alt={siteMetadata.author}
@@ -31,7 +35,7 @@ const Bio = () => {
         Written by <strong>{siteMetadata.author}</strong>, Pythonista & JS lover
         (D3, React). You can find me on <a href={twitterUrl}>Twitter</a> &amp;{' '}
         <a href={githubUrl}>Github</a>
-      </p>
+      </P>
     </Div>
   )
 }

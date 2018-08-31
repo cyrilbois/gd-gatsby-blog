@@ -85,8 +85,8 @@ The resulting CSV file was obviously much smaller.
 
 I decided to use the following [visual encoding](https://blog.qlik.com/visual-encoding) for the points (well, circles):
 
-- color correlates with number of fires (yellow = less fires; purple = more fires)
-- size correlates with area (in hectares).
+* color correlates with number of fires (yellow = less fires; purple = more fires)
+* size correlates with area (in hectares).
 
 ## Success!
 
@@ -106,9 +106,9 @@ Other projects where I had to do much more data wrangling had been completely ig
 
 Lessons learned:
 
-- Nobody cares about how much you struggled with data wrangling (but you still have to do it).
-- Always include a GIF in a README (well, I already knew that...)
-- Sardinian cities keep their Italian name in English
+* Nobody cares about how much you struggled with data wrangling (but you still have to do it).
+* Always include a GIF in a README (well, I already knew that...)
+* Sardinian cities keep their Italian name in English
 
 ## Code
 

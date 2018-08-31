@@ -43,17 +43,11 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-highlights`,
+            resolve: `gatsby-remark-prismjs`,
             options: {
-                // Remove syntax-- from Atom's CSS theme
-                scopePrefix: 'syntax--',
-                // if set, codeWrap wraps the code in a <div>
-                // codeWrap: {
-                //   className: 'editor-container'
-                // }
-              }
+              classPrefix: "language-"
+            }
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
@@ -61,13 +55,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // Remove Google Tag Manager to disable tracking by Google Analytics
-    // {
-    //   resolve: 'gatsby-plugin-google-tagmanager',
-    //   options: {
-    //     id: 'GTM-N69LK3M',
-    //   },
-    // },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -36,10 +36,6 @@ class BlogPostTemplate extends React.Component {
       'props.data.site.siteMetadata.description'
     )
     const { previous, next } = this.props.pageContext
-    const timeToReadString =
-      post.timeToRead === 1
-        ? `Reading Time: ${post.timeToRead} minute`
-        : `Reading Time: ${post.timeToRead} minutes`
 
     return (
       <Layout location={this.props.location}>
@@ -49,11 +45,8 @@ class BlogPostTemplate extends React.Component {
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
         <h1>{post.frontmatter.title}</h1>
-        <P marginTop={rhythm(-1)} marginBottom={rhythm(1)} {...scale(-1 / 5)}>
-          {post.frontmatter.date}
-        </P>
-        <P marginTop={rhythm(-1)} marginBottom={rhythm(1)} {...scale(0.25)}>
-          {timeToReadString}
+        <P marginTop={rhythm(-1)} marginBottom={rhythm(1)} {...scale(-0.2)}>
+          {`${post.frontmatter.date} | ${post.timeToRead} min Read`}
         </P>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Hr marginBottom={rhythm(1)} />

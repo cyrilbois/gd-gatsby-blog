@@ -88,10 +88,10 @@ with sqlite3.connect(DB_PATH) as conn:
 
 So, to recap:
 
-- `InitSpatialMetaData()` and `AddGeometryColumn()` are functions from Spatialite, so you have to load it as a SQLite extension.
-- `InitSpatialMetaData()` must be called before attempting to call any other Spatial SQL function.
-- You just need to call `InitSpatialMetaData()` once; calling it multiple times is useless but completely harmless.
-- First create the table, then add the Geometry-column as a separate step.
+* `InitSpatialMetaData()` and `AddGeometryColumn()` are functions from Spatialite, so you have to load it as a SQLite extension.
+* `InitSpatialMetaData()` must be called before attempting to call any other Spatial SQL function.
+* You just need to call `InitSpatialMetaData()` once; calling it multiple times is useless but completely harmless.
+* First create the table, then add the Geometry-column as a separate step.
 
 ## Convert each shapely geometry into a WKB representation
 

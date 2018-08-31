@@ -3,24 +3,29 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 import { siteMetadata } from '../../gatsby-config.js'
+import 'prismjs/themes/prism-okaidia.css'
 
 const Span = styled.span`
-  margin-bottom: ${props => props.marginBottom};
   margin-top: ${props => props.marginTop};
+  margin-bottom: ${props => props.marginBottom};
+  font-family: ${props => props.fontFamily};
   /* fontSize and lineHeight come from scale() */
   font-size: ${props => props.fontSize};
   line-height: ${props => props.lineHeight};
 `
 
 const H3 = styled.h3`
-  margin-bottom: ${props => props.marginBottom};
   margin-top: ${props => props.marginTop};
+  margin-bottom: ${props => props.marginBottom};
   font-family: ${props => props.fontFamily};
+  /* fontSize and lineHeight come from scale() */
+  font-size: ${props => props.fontSize};
+  line-height: ${props => props.lineHeight};
 `
 
 const Div = styled.div`
-  margin-left: ${props => props.marginLeft};
   margin-right: ${props => props.marginRight};
+  margin-left: ${props => props.marginLeft};
   max-width: ${props => props.maxWidth};
   padding: ${props => props.padding};
 `
@@ -43,11 +48,16 @@ class Template extends React.Component {
         /* header on the home page */
       }
       header = (
-        <Span marginTop={0} marginBottom={rhythm(1.5)} {...scale(1.5)}>
+        <H3
+          fontFamily={'Montserrat, sans-serif'}
+          marginTop={0}
+          marginBottom={rhythm(1.5)}
+          {...scale(1.5)}
+        >
           <Link to={'/'} style={gatsbyLinkStyle}>
             {websiteTitle}
           </Link>
-        </Span>
+        </H3>
       )
     } else {
       {
@@ -57,7 +67,8 @@ class Template extends React.Component {
         <H3
           fontFamily={'Montserrat, sans-serif'}
           marginTop={0}
-          marginBottom={rhythm(-1)}
+          marginBottom={rhythm(-1.5)}
+          {...scale(0.25)}
         >
           <Link to={'/'} style={gatsbyLinkStyle}>
             {websiteTitle}

@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -6,7 +7,10 @@ import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
 import Footer from '../components/Footer'
-import '../css/atom-dark-syntax.css'
+
+const H3 = styled.h3`
+  margin-bottom: ${props => props.marginBottom};
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -26,19 +30,20 @@ class BlogIndex extends React.Component {
         />
         <Bio />
         {posts.map(({ node }) => {
+          {
+            /* console.log('node', node) */
+          }
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <H3 marginBottom={rhythm(0.25)}>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+              </H3>
+              <small>{`${node.frontmatter.date} | ${
+                node.timeToRead
+              } min Read`}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -66,6 +71,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title

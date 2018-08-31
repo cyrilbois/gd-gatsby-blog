@@ -21,3 +21,8 @@ gatsby develop
 ```shell
 npm run deploy
 ```
+
+
+## Notes
+
+When embedding tweets with [gatsby-plugin-twitter](https://www.gatsbyjs.org/packages/gatsby-plugin-twitter/?=), include only the `<blockquote>`, not the `<script>`.

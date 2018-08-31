@@ -1,0 +1,813 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/0.2a41c7fc8d89fd2e217b.css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-50d279861fb3cbfed809eae6ed8b9ac9.woff2) format("woff2"),url(/static/montserrat-latin-100-5e334eff013f12fbb8ed72c2a253f119.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-8c0705336558194799a8729840d7ed9d.woff2) format("woff2"),url(/static/montserrat-latin-100italic-03e19243272affe738654a157625ec26.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-4343d3d91a9446226e7a8bbb024111ad.woff2) format("woff2"),url(/static/montserrat-latin-200-f2022ecd65a0703ec3edcb7641709a75.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-116c4c4b14ef76b0555da09854512022.woff2) format("woff2"),url(/static/montserrat-latin-200italic-89614a6008fc5c60739012463d0ee7e6.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-d2ad295b60682a6537c358e06ea80c61.woff2) format("woff2"),url(/static/montserrat-latin-300-3a371ee0d175f5c2b15ce1d6b981dc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-f6b6bf2431003f8142e800f9df157989.woff2) format("woff2"),url(/static/montserrat-latin-300italic-16521668f5f238098329cdd7d27c391e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-240a84447b78da0920fcb07e378f2c5f.woff2) format("woff2"),url(/static/montserrat-latin-400-b20cc131034316b1c85d0498fb9ed5c5.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-86172bb829de6be08b92512096b6aca6.woff2) format("woff2"),url(/static/montserrat-latin-400italic-9405e78785a55cf0e4ea7669d4616ea9.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-fb8d6b71dbe8d9294be43082936f649e.woff2) format("woff2"),url(/static/montserrat-latin-500-50825d47af7ae47e055018eb689c6c99.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c0a555a4f8e997385a3eebbd4da0b9ee.woff2) format("woff2"),url(/static/montserrat-latin-500italic-635de59c4be86285b1f70068c95b9816.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-d5615136a08cfee70deb4be1ee1651df.woff2) format("woff2"),url(/static/montserrat-latin-600-f300da4fb4fe00e23915f62b2c643681.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-10f29d139edacde92df63374c5672568.woff2) format("woff2"),url(/static/montserrat-latin-600italic-2bc37d86a4ba12ce526c4af904a9946e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7d77e1f03eefc452dab14d7f89080083.woff2) format("woff2"),url(/static/montserrat-latin-700-81826529772e52f0f14a4c73c2f2c7f1.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-1dd2b53f1567a29e0505de9b27c4352c.woff2) format("woff2"),url(/static/montserrat-latin-700italic-c162d257f5e9f9b108a96a604cfb2132.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-d4e7bf86bbd8e5f43ca73fa831218648.woff2) format("woff2"),url(/static/montserrat-latin-800-895aadbff357be35ac8dd107c7975ee7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-fc0cbe442f7b3733c91e982e825c4daa.woff2) format("woff2"),url(/static/montserrat-latin-800italic-b3362875067300abedb7a8fb97903258.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-c8bdd772c0d1347720ff7e3fb72719f3.woff2) format("woff2"),url(/static/montserrat-latin-900-1b99ef78e627dd9bbd0ca4b5c0789547.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-cb72c1f90f66c124fb897a75bec64c78.woff2) format("woff2"),url(/static/montserrat-latin-900italic-b78bb9f8ecec6c5a924c873f1818095f.woff) format("woff")}
+@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-f015f1e9a46a3b9db4fd64564dacece4.woff2) format("woff2"),url(/static/merriweather-latin-300-92dfe81b725c342d31d962da975c07a6.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-7fd86b32accf2df4403d1d4fa3a81502.woff2) format("woff2"),url(/static/merriweather-latin-300italic-878b76f59d5ba58dd1652dc8d2a0f4f9.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-12dbf4c00ae43698f278b099e4b0ec9e.woff2) format("woff2"),url(/static/merriweather-latin-400-1fffad22b085a877995812dbf1d9ac08.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-1e0d3e8121d88969bfb153c8f174b758.woff2) format("woff2"),url(/static/merriweather-latin-400italic-de18d4c4e8e808a7248a185f866ff094.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-dc8fec81a125fc63856587e6683da73b.woff2) format("woff2"),url(/static/merriweather-latin-700-d7d2ed8e58f303392cc3fc00ba3a9186.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-b7b7e5da4d7be8c12bd5a6c809edc8fc.woff2) format("woff2"),url(/static/merriweather-latin-700italic-6210a5fc1c54ca85a5d82aa85d7a9b5c.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-43f870d543dd89fbeb66d417c0d97276.woff2) format("woff2"),url(/static/merriweather-latin-900-8f3806df74937c7b8b53f24ae1e725d1.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-168c1ab28ed0e4e7d654334def288bc1.woff2) format("woff2"),url(/static/merriweather-latin-900italic-ae7778f01871e35ee142ef207b313b34.woff) format("woff")}
+code[class*=language-],pre[class*=language-]{-moz-hyphens:none;-moz-tab-size:4;-ms-hyphens:none;-o-tab-size:4;-webkit-hyphens:none;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal;word-wrap:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#f8f8f2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+/*# sourceMappingURL=0.2a41c7fc8d89fd2e217b.css.map*/</style><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">How to get started with regl and Webpack | Giacomo Debidda</title><meta data-react-helmet="true" name="description" content="Giacomo Debidda&#x27;s Personal Blog"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.75rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}a.gatsby-resp-image-link{box-shadow:none;}</style><link as="script" rel="preload" href="/0-f03144f5dd3d439a1324.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-67f46c4b2874750232a3.js"/><link as="script" rel="preload" href="/app-f34260e0362362e939cc.js"/><link as="script" rel="preload" href="/webpack-runtime-f203abf059d5dccbfdbd.js"/><link rel="preload" href="/static/d/523/path---how-to-get-started-with-regl-and-webpack-301-653-96jLno44AenoXYUFxtDLO0ZucQ.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div class="sc-ifAKCX cFFfoi"><h3 class="sc-bxivhb GINdQ" font-family="Montserrat, sans-serif" font-size="1.25743rem"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/">Giacomo Debidda</a></h3><h1>How to get started with regl and Webpack</h1><p class="sc-bZQynM lmAvzj" font-size="0.83255rem">October 31, 2017 | 18 min Read</p><div><p>I have been wanting to play around with the <a href="https://github.com/regl-project/regl">regl</a> library since I wathed the <a href="https://www.youtube.com/watch?v=rFjszW5L2aw&#x26;t=1196s">talk that Mikola Lysenko gave at PLOTCON 2016</a>, and this week I finally decided to invest some time in setting up a repo with Webpack and some regl examples.</p>
+<p>regl is a pretty new library, but it seems quite popular among data visualization practitioners. <a href="http://vallandingham.me/regl_intro.html">Jim Vallandingham</a> and <a href="https://peterbeshai.com/beautifully-animate-points-with-webgl-and-regl.html">Peter Beshai</a> wrote really nice tutorials about regl, and Nadieh Bremer created the stunning visualization <a href="https://bl.ocks.org/nbremer/1acc6c95e3bb374dc78329e94f85a9b0">“A breathing Earth”</a>.</p>
+<h2>regl and WebGL</h2>
+<p>Before starting to learn about regl, you need some basic knowledge about WebGL, the low level API to draw 3D graphics in the browser, and its <a href="http://tsherif.github.io/webgl-presentation/#/">graphics pipeline (aka rendering pipeline)</a>. <a href="https://webglfundamentals.org/webgl/lessons/webgl-how-it-works.html">This article on WebGL Fundamentals</a> does a great job in explaining what WebGL is:</p>
+<blockquote>
+<p>WebGL is just a rasterization engine. It draws points, lines, and triangles based on code you supply.</p>
+</blockquote>
+<p>WebGL runs on the GPU on your computer, and you need to provide the code in the form of two functions: a <strong>vertex shader</strong> and a <strong>fragment shader</strong>.</p>
+<p>Another important thing to know is that WebGL is a <a href="https://www.packtpub.com/mapt/book/game_development/9781849699792/3/ch03lvl1sec24/understanding-webgl--a-state-machine">state machine</a>: once you modify an attributes, that modification is permanent until you modify that attribute again.</p>
+<p>regl is <strong>functional abstration</strong> of WebGL. It simplifies WebGL programming by removing as much shared state as it can get away with.</p>
+<p>In regl there are two fundamentals abstractions: <strong>resources</strong> and <strong>commands</strong>.</p>
+<ul>
+<li>A resource is a handle to something that you load on the GPU, like a texture.</li>
+<li>A command is a complete representation of the WebGL state required to perform some draw call. It wraps it up and packages it into a single reusable function.</li>
+</ul>
+<p>In this article I will only talk about <a href="http://regl.party/api#commands">commands</a>.</p>
+<h2>Project structure and boilerplate</h2>
+<p>I found out that if I want to learn a new technology/library/tool I have to play around with it, so I created a repo and I called it <a href="https://github.com/jackdbd/regl-playground">regl-playground</a>.</p>
+<p>Let’s start defining the structure for this repo. Here is the root directory:</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">.
+├── package.json
+├── README.md
+├── src
+└── webpack.config.js</code></pre></div>
+<p>And here is the <code class="language-text">src</code> directory.</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">.
+├── css
+│   └── main.css
+├── js
+│   ├── index.js
+│   └── one-shot-rendering.js
+└── templates
+    ├── index.html
+    └── one-shot-rendering.html</code></pre></div>
+<p>You will need <code class="language-text">regl</code> and a few dev dependencies for webpack. If you want to save some time (and keystrokes), you can copy the <code class="language-text">package.json</code> down below and install all you need with <code class="language-text">yarn install</code>.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"regl-playground"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token string">"git@github.com:jackdbd/regl-playground.git"</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"jackdbd &lt;jackdebidda@gmail.com>"</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"MIT"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server --config webpack.config.js"</span><span class="token punctuation">,</span>
+    <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint src"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack --config webpack.config.js --progress"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"babel-core"</span><span class="token operator">:</span> <span class="token string">"^6.26.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"babel-loader"</span><span class="token operator">:</span> <span class="token string">"^7.1.2"</span><span class="token punctuation">,</span>
+    <span class="token property">"babel-preset-es2015"</span><span class="token operator">:</span> <span class="token string">"^6.24.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"clean-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^0.1.17"</span><span class="token punctuation">,</span>
+    <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"^4.5.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"eslint-config-airbnb-base"</span><span class="token operator">:</span> <span class="token string">"^12.1.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"eslint-plugin-import"</span><span class="token operator">:</span> <span class="token string">"^2.7.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"extract-text-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^3.0.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"html-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^2.30.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"style-loader"</span><span class="token operator">:</span> <span class="token string">"^0.19.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^3.8.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"webpack-bundle-analyzer"</span><span class="token operator">:</span> <span class="token string">"^2.9.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"webpack-dev-server"</span><span class="token operator">:</span> <span class="token string">"^2.9.3"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"regl"</span><span class="token operator">:</span> <span class="token string">"^1.3.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Next, you will need 2 HTML files, one for the index, one for the actual regl application. I think it’s a good idea to put these files in <code class="language-text">src/templates</code>.</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- index.html --></span>
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x-ua-compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Home of regl-playground<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- bundle.css is injected here by html-webpack-plugin --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>List of regl examples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/one-shot-rendering.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>one-shot rendering<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>For documentation, see the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://regl.party/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>regl API<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>Examples with regl version <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">></span></span>1.3.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- bundle.js is injected here by html-webpack-plugin --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- one-shot-rendering.html --></span>
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x-ua-compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>One shot rendering<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>regl example with one shot rendering<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- bundle.css is injected here by html-webpack-plugin --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/index.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>regl one shot rendering example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- bundle.js is injected here by html-webpack-plugin --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Then, create a minimal CSS file in <code class="language-text">src/css</code>.</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token comment">/* main.css */</span>
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #0B4192<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And the Javascript files. We’ll put the code in <code class="language-text">one-shot-rendering.js</code> later on. For now, just import the CSS, so you can check that webpack is setup correctly.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// index.js</span>
+<span class="token keyword">import</span> <span class="token string">'../css/main.css'</span><span class="token punctuation">;</span></code></pre></div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// one-shot-rendering.js</span>
+<span class="token keyword">import</span> <span class="token string">'../css/main.css'</span><span class="token punctuation">;</span></code></pre></div>
+<p>Finally, the webpack configuration. I like to include <code class="language-text">BundleAnalyzerPlugin</code> to check the bundle sizes.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> CleanWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ExtractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> BundleAnalyzerPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-bundle-analyzer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    home<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token string">'index.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'one-shot-rendering'</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token string">'one-shot-rendering.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'[name].[chunkhash].bundle.js'</span><span class="token punctuation">,</span>
+    sourceMapFilename<span class="token punctuation">:</span> <span class="token string">'[file].map'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token comment">// rule for .js/.jsx files</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.(js|jsx)$/</span><span class="token punctuation">,</span>
+        include<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        exclude<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          loader<span class="token punctuation">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// rule for css files</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+        include<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'css'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> ExtractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">{</span> fallback<span class="token punctuation">:</span> <span class="token string">'style-loader'</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token string">'css-loader'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  target<span class="token punctuation">:</span> <span class="token string">'web'</span><span class="token punctuation">,</span>
+  devtool<span class="token punctuation">:</span> <span class="token string">'source-map'</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">BundleAnalyzerPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span>
+      <span class="token punctuation">[</span><span class="token string">'dist'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> root<span class="token punctuation">:</span> __dirname<span class="token punctuation">,</span> exclude<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'favicon.ico'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> verbose<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      template<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">,</span> <span class="token string">'index.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      filename<span class="token punctuation">:</span> <span class="token string">'index.html'</span><span class="token punctuation">,</span>
+      chunks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'commons'</span><span class="token punctuation">,</span> <span class="token string">'home'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      template<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">,</span> <span class="token string">'one-shot-rendering.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      filename<span class="token punctuation">:</span> <span class="token string">'one-shot-rendering.html'</span><span class="token punctuation">,</span>
+      chunks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'commons'</span><span class="token punctuation">,</span> <span class="token string">'one-shot-rendering'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>optimize<span class="token punctuation">.</span>CommonsChunkPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'commons'</span><span class="token punctuation">,</span>
+      filename<span class="token punctuation">:</span> <span class="token string">'[name].[chunkhash].bundle.js'</span><span class="token punctuation">,</span>
+      chunks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'home'</span><span class="token punctuation">,</span> <span class="token string">'one-shot-rendering'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token string">'[name].[chunkhash].bundle.css'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    host<span class="token punctuation">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+    port<span class="token punctuation">:</span> <span class="token number">8080</span><span class="token punctuation">,</span>
+    contentBase<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    inline<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    stats<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      colors<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      reasons<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      chunks<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      modules<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  performance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    hints<span class="token punctuation">:</span> <span class="token string">'warning'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>Ah, don’t forget <code class="language-text">.babelrc</code>!</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
+  &quot;presets&quot;: [&quot;es2015&quot;]
+}</code></pre></div>
+<p>Check that everything works by running <code class="language-text">yarn run dev</code> and going to <code class="language-text">http://localhost:8080/</code>.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/webpack-configured-41e009a31cfaa4d8f7e0df5a27b5b085-61552.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 301px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 71.42857142857143%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAACYElEQVQ4y61US2/aQBDmP/dX9NRLT730VCmqVCWtcqgqQUSqIFqbNwYMfmCDAYMj/MQv7K+zxqRJUaUeamm8uzOz336zM7OV7XYLwzDgui4cx8F8Pi/ENE3oug5juYCsKFBkGZqmY71aYbVew/M8JEmCOI5fSIWBSZKE/X4Py7Kg0ObFYoE1bdK0OVRFhjidYTYVCVgl/QoGgXqejzRJLwHZj510OIQIw5CUCaIoRng4kI4kjGgdFc7MHpR6BuhQVK7rFWzZnI0V/Oev0p9u0BgYuG9peOgb0EwP19UJuImJrniyXddEtCabQn4IazRJ972jo9410Ghr+FgVUeM0bPcHVCT9EVVafKlP8bWpoi9beP+5h9nSxh2v4erbGK/e1CAoFm2a4/ZBxrvrHm7uRLz+wOPtFYebewmfCFQ2nH8LOT5mf7Xlf4ac5znS9FhcdBgklIwEnkOX77HExPDdCCHNAz8ivwxZluNIBzDJ8hNcsSY9wyoYsiw7rg11aGLaMSC2DUy4JeTeCoPGHGNugW5dhW0FJ1bZb155CcpGNqswsLPyMpxn+pyxOj4tsyxDEqelB2NXhryhAh6NBAwHQ5IB+FYHvU4LfLuDFs9T0VNhiyIV9gTtbheysILQ1KEMNxj/1JGW93smdZGUI53MjIwN88nKuzl/SZjC31OhH44kacH0BeCGWmksCOgTQ57joC+XkGYzDIitLEsYkk1TVYwnIkbCEOZuh521pRY0EFIHPQcrAFlLedQ2lvWIHT0UQRAUD4Xv+7DtffFIsDlrLce2qf2iogVZVbDqeEpICfoLp9IibRXnMwAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="The screen you should see if you visit localhost:8080"
+        title="Webpack configured"
+        src="/static/webpack-configured-41e009a31cfaa4d8f7e0df5a27b5b085-61552.png"
+        srcset="/static/webpack-configured-41e009a31cfaa4d8f7e0df5a27b5b085-46cb3.png 148w,
+/static/webpack-configured-41e009a31cfaa4d8f7e0df5a27b5b085-021c3.png 295w,
+/static/webpack-configured-41e009a31cfaa4d8f7e0df5a27b5b085-61552.png 301w"
+        sizes="(max-width: 301px) 100vw, 301px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>Your first regl command</h2>
+<p>As I said, the regl API provides you with two abstractions: resources and commands. A regl command wraps up all of the WebGL state associated with a draw call (either drawArrays or drawElements) and packages it into a single reusable function.</p>
+<p>Here is what you can define in a regl command:</p>
+<ul>
+<li>vertex shader</li>
+<li>fragment shader</li>
+<li>uniforms</li>
+<li>attributes</li>
+<li>primitive</li>
+<li>count</li>
+</ul>
+<p>That’s a lot of terminology! What are these things?</p>
+<p>I will try to explain these items in a sentence or two, but if you are looking for some more detailed information you should definitely read the article by <a href="https://www.toptal.com/javascript/3d-graphics-a-webgl-tutorial">Adnan Ademovic on the TopTal blog</a>. It’s a great resource and contains a lot of links to master WebGL.</p>
+<p>Here is a summary:</p>
+<p><strong>Vertex shader</strong>.
+A function written in GLSL that runs on your GPU. Its job is to compute vertex positions and set a variable called <code class="language-text">gl_Position</code>. It gets the data from Javascript and can pass other data to the fragment shader.</p>
+<p><strong>Fragment shader</strong>.
+A function written in GLSL that runs on your GPU. Its job is to compute the color of each fragment (you can think of a fragment like a pixel, but the whole story is <a href="http://t-machine.org/index.php/2013/10/05/why-is-a-fragment-shader-named-a-fragment-shader/">more complicated</a> than that).</p>
+<p><strong>Uniforms</strong>.
+Global variables that you set in Javascript and that are broadcasted to both shaders. They cannot be changed (something similar to <code class="language-text">const</code> in ES6). They stay the same for all vertices during a single draw call.</p>
+<p><strong>Attributes</strong>.
+Data that points to Vertex Buffer Objects. Attributes are used in the vertex shader.</p>
+<p><strong>Primitive</strong>.
+The primitive type for the <a href="http://regl.party/api#elements">element</a> buffer. WebGL is mostly used to draw triangles, but you can also draw individual points. In regl the supported primitives are: <code class="language-text">&#39;points&#39;</code>, <code class="language-text">&#39;lines&#39;</code>, <code class="language-text">&#39;line strip&#39;</code>, <code class="language-text">&#39;line loop&#39;</code>, <code class="language-text">&#39;triangles&#39;</code>, <code class="language-text">&#39;triangle strip&#39;</code> and <code class="language-text">&#39;triangle fan&#39;</code>.</p>
+<p><strong>Count</strong>.
+The number of vertices to draw (e.g. if you want to draw 2 triangles you need to set <code class="language-text">count</code> to 6).</p>
+<p>Ok, enough talking. Let’s see some regl action! Open <code class="language-text">one-shot-rendering.js</code> and write this code:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// one-shot-rendering.js</span>
+<span class="token keyword">import</span> <span class="token string">'../css/main.css'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Create a full screen canvas element and a WebGLRenderingContext.</span>
+<span class="token keyword">const</span> regl <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'regl'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> drawTriangle <span class="token operator">=</span> <span class="token function">regl</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+
+  <span class="token comment">// The vertex shader tells the GPU where to draw the vertices.</span>
+  vert<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+  precision mediump float;
+
+  uniform float scale;
+  uniform float pointSize;
+  attribute vec2 position;
+  attribute vec3 color;
+  varying vec3 frag_color;  // varying to pass to the fragment shader
+
+  float z = 0.0;
+  float w = 1.0;
+
+  void main () {
+    frag_color = color;
+    gl_PointSize = pointSize;
+    gl_Position = vec4(position * scale, z, w);
+  }
+  `</span></span><span class="token punctuation">,</span>
+
+  <span class="token comment">// The fragment shader tells the GPU what color to draw.</span>
+  frag<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    precision mediump float;
+  
+    varying vec3 frag_color;  // received from the vertex shader
+  
+    void main () {
+      gl_FragColor = vec4(sqrt(frag_color), 1.0);
+    }
+  `</span></span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Now that the shaders are defined, we pass the vertices to the GPU</span>
+  attributes<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    position<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.75</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    color<span class="token punctuation">:</span> regl<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'rgbColors'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  uniforms<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// get the prop pointSize and pass it to the shaders</span>
+    pointSize<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> prop<span class="token punctuation">)</span> <span class="token operator">=></span> prop<span class="token punctuation">.</span>pointSize<span class="token punctuation">,</span>
+    <span class="token comment">// we can also access the props with this shorthand syntax</span>
+    scale<span class="token punctuation">:</span> regl<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'scale'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// specify the primitive type (the default is 'triangle')</span>
+  primitive<span class="token punctuation">:</span> <span class="token string">'points'</span><span class="token punctuation">,</span>
+  <span class="token comment">// and we tell the GPU how many vertices to draw</span>
+  count<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// In one-shot rendering the command is executed once and immediately.</span>
+<span class="token function">drawTriangle</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  pointSize<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">,</span>
+  scale<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+  rgbColors<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Run <code class="language-text">yarn run dev</code> and go to <code class="language-text">http://localhost:8080/</code>. You should see something like this:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/one-shot-rendering-points-a4213d4a29685f95b47fe9b6befcceda-41482.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 24.963924963924967%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAARElEQVQY05WOOQoAMAgE9/9vFWzSCRoDSbDZHDOFYjGIOODpoKWa1hsDcaEGaMx9T5Sdxnz6EgWLfbECIgFV/uF30Cw6wEON2kYnzfkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="One-shot rendering: three points at localhost:8080"
+        title="Three points"
+        src="/static/one-shot-rendering-points-a4213d4a29685f95b47fe9b6befcceda-fb8a0.png"
+        srcset="/static/one-shot-rendering-points-a4213d4a29685f95b47fe9b6befcceda-1a291.png 148w,
+/static/one-shot-rendering-points-a4213d4a29685f95b47fe9b6befcceda-2bc4a.png 295w,
+/static/one-shot-rendering-points-a4213d4a29685f95b47fe9b6befcceda-fb8a0.png 590w,
+/static/one-shot-rendering-points-a4213d4a29685f95b47fe9b6befcceda-41482.png 693w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Well… not that exciting you might say. All that code for three points on the screen?</p>
+<p>Ok, let’s try changing the line <code class="language-text">primitive: &#39;points&#39;</code>. You can either remove it or replace <code class="language-text">&#39;points&#39;</code> with <code class="language-text">&#39;triangle&#39;</code> (the default primitive). Now you should see this:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/one-shot-rendering-triangle-95c21e782a1b14414c9aaeec5269fbb4-d8574.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 23.900293255131967%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAABUUlEQVQY003Q2yvDYRzH8d+fNjeGUqa4IBltRcmFQw5JVsumaKmFthI5l+GCuFhESjnNRmtW22zNsYVtthm/3/P2+1H41Pf59u15vq+LRxJCoEXrilqy8jNreVDSOHLLGF4NTKR7uS7s8yFyv/eoT4X8iVCU731tU9I8DfkPxYsZRm8PqAjaKfW3YvKZaD+rxHKiY95Xw3lkjOe0TwUU/keDJUX+g8LZHFb/FWU7a5RvuGjZmGJw3cnI6giTKxZmFrpYnGnE49Ljdem4XKrn6XCC4n1QxeVvQ9KOwN07/etJSmynlPbvYe7x0texjbXNg8M0h9voZtnoZNM4yl7TMMdNFgLGbkINzcTqqngy11IYtyFCQaTOoRz66kcaahJYzQmmO+J4BqJ47RGOnRGCs1Finhh3WzekdhOkj5LkL+4phlPIySzi5RMK6h9m3hD5PF9R60v+yWu1BgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="One-shot rendering: a triangle at localhost:8080"
+        title="A triangle"
+        src="/static/one-shot-rendering-triangle-95c21e782a1b14414c9aaeec5269fbb4-fb8a0.png"
+        srcset="/static/one-shot-rendering-triangle-95c21e782a1b14414c9aaeec5269fbb4-1a291.png 148w,
+/static/one-shot-rendering-triangle-95c21e782a1b14414c9aaeec5269fbb4-2bc4a.png 295w,
+/static/one-shot-rendering-triangle-95c21e782a1b14414c9aaeec5269fbb4-fb8a0.png 590w,
+/static/one-shot-rendering-triangle-95c21e782a1b14414c9aaeec5269fbb4-d8574.png 682w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>That’s better! Let’s stop for a second and try to explain what’s going on.</p>
+<p>The way we drew this triangle is called <a href="http://regl.party/api#one-shot-rendering">one-shot rendering</a>. The command is executed only once and immediately.</p>
+<p>We called the command with some <strong>props</strong>, which will be available in uniforms and attributes.</p>
+<p>The line <code class="language-text">const regl = require(&#39;regl&#39;)();</code> creates a full screen canvas element and a <code class="language-text">WebGLRenderingContext</code>. This context will be available in the command <code class="language-text">drawTriangle</code> and can be accessed in uniforms and attributes.</p>
+<p>Context and props can be accessed with <code class="language-text">pointSize: (context, prop) =&gt; prop.pointSize,</code>, or even with a shorthand syntax: <code class="language-text">regl.context(&#39;pixelRatio&#39;)</code> and <code class="language-text">regl.prop(&#39;scale&#39;)</code>.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/context-221324eb8bbf32f43d457d577f91bec8-5b410.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 33.69905956112852%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAAxElEQVQoz52QC27DIBBEff8rVk1bqVbi1LEJf8PCKy7uAWKkkXaH0fDEcL3esDrirMe7DWscWhu8d5in/HnOWaw1LRPaXvqd6Z73Ad1yISa2XBjc7JjfFh6XhfVLcf82/NwjtQo5VURKUybnXdLm3ZNjz30+cqVUBr8ElsvK+qnQo2YaIzFUzp4hrAHVqLyKpCik1F+C2ihfVyP0qMkje5HQ1OnqScjBTJblfW1/ODN+KJ5KjsKThHlLyFaIMWKsPV30r1+/JiWlS2eJnwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="regl context"
+        title="The regl context"
+        src="/static/context-221324eb8bbf32f43d457d577f91bec8-fb8a0.png"
+        srcset="/static/context-221324eb8bbf32f43d457d577f91bec8-1a291.png 148w,
+/static/context-221324eb8bbf32f43d457d577f91bec8-2bc4a.png 295w,
+/static/context-221324eb8bbf32f43d457d577f91bec8-fb8a0.png 590w,
+/static/context-221324eb8bbf32f43d457d577f91bec8-5b410.png 638w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>As you can see from the image, the <code class="language-text">drawingBufferWidth</code> is equal to the <code class="language-text">viewportWidth</code>, and the <code class="language-text">drawingBufferHeight</code> is equal to the <code class="language-text">viewportHeight</code>. However, this is true only because we created a <code class="language-text">WebGLRenderingContext</code> without specifying any initialization argument for the regl contructor and because we didn’t set the <code class="language-text">viewport</code>.</p>
+<h2>One canvas, two sizes</h2>
+<p>When you think about the canvas for your regl/WebGL application you need to decide how big you want the canvas to be (e.g. full screen, a small portion of the web page, etc), and how many pixels you want to display.</p>
+<p>In order to illustrate this concept we need to make a few small <a href="https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html">changes to the code</a>.</p>
+<p>In your <code class="language-text">one-shot-rendering.html</code>, add a <code class="language-text">&lt;canvas&gt;</code> element.</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- don't change anything above this point --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>regl one shot rendering example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>regl-canvas<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- don't change anything below this point --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre></div>
+<p>You can set the size of the canvas in CSS. In your <code class="language-text">main.css</code> file define a <code class="language-text">canvas</code> selector. Let’s say that you want the canvas to be as wide as half of the viewport width, and as high as half of the viewport height. You can also add a red border to understand where the canvas is.</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token comment">/* Set the size of the canvas element (i.e. how big the canvas is). */</span>
+<span class="token selector">canvas</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50vw<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50vh<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #f00<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The size of the canvas has nothing to do with how many pixels you want to have the canvas. For this, you need to modify the Javascript code. In <code class="language-text">one-shot-rendering.js</code>, replace this line:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> regl <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'regl'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>with this code:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'regl-canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> regl <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'regl'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  canvas<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Set the size of the drawingbuffer (i.e. how many pixels are in the canvas)</span>
+canvas<span class="token punctuation">.</span>width <span class="token operator">=</span> canvas<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+canvas<span class="token punctuation">.</span>height <span class="token operator">=</span> canvas<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span></code></pre></div>
+<p>and in the <code class="language-text">drawTriangle</code> command add the <code class="language-text">viewport</code>:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">viewport<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  width<span class="token punctuation">:</span> canvas<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+  height<span class="token punctuation">:</span> canvas<span class="token punctuation">.</span>height<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/canvas-94487616687224d36ad5c1ee30894c14-c240c.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 49.07801418439717%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABnUlEQVQoz62SW0tbQRCA8798En3ysSCKT96veENoXiI+SEUDohFBxRLbUhSlEQRRgogKSoOoEQURFXLAJF6KBpOYc5KcPZ+76YkabZ/aWYadmZ39mNlZB4kEGAbo+r+pYiSTOHLG/5JMRgIVXYllFahl64stCvy3+TlJp98Ac5t9wbbNZxDSziLy/uvcPwH/CrJFJ/XSmgwLkS2sWoUV0JJAy64wBxJWASiQPqfz4RPNsSqWHjxE08e/iXm2yjclXK18herYNK3XeWzELmk9+0FJ0EX5XhvtuzU4A2WM/CxlOVjHuTbDYyr0figipT/7sgH84V80bgYoXZynct7Lx9nPDHwbx+MdwjvVx9x4F77hClYHiwm4iwl5m4hvfce81rAMXVZoGiSzsLD9SKVbo6htnw/1O3RXb9Ffs4andpkvdT58DXP4G7+y3TxNsGWC09YxtE430R4Xdy4n+pQHcXSI4+IozkD/Pc6OKJO9YfyjEXZnIpz4wmgrYa7WI9ztREkcXKOf3JIN3SNu4pBQHzojJytkq7I9Q75jLMYThEzdfBSQ8ZQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="The canvas is no longer full screen"
+        title="The canvas"
+        src="/static/canvas-94487616687224d36ad5c1ee30894c14-fb8a0.png"
+        srcset="/static/canvas-94487616687224d36ad5c1ee30894c14-1a291.png 148w,
+/static/canvas-94487616687224d36ad5c1ee30894c14-2bc4a.png 295w,
+/static/canvas-94487616687224d36ad5c1ee30894c14-fb8a0.png 590w,
+/static/canvas-94487616687224d36ad5c1ee30894c14-c240c.png 705w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>Batch rendering</h2>
+<p>With <a href="http://regl.party/api#batch-rendering">batch rendering</a> you can execute a regl command multiple times. The command is executed once for each element of the array passed as argument. Let’s see it in action.</p>
+<p>Create a new HTML file called <code class="language-text">batch-rendering.html</code>:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- batch-rendering.html --></span>
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x-ua-compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>batch rendering<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>regl example with batch rendering<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- bundle.css is injected here by html-webpack-plugin --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/index.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>regl batch rendering example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>regl-canvas<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- bundle.js is injected here by html-webpack-plugin --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>You will need to create a new <code class="language-text">entry</code> in webpack, as well as a new configuration for the <code class="language-text">html-webpack-plugin</code>:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// webpack.config.js</span>
+entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// other entry points</span>
+  <span class="token string">'batch-rendering'</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'js'</span><span class="token punctuation">,</span> <span class="token string">'batch-rendering.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// other entry points</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// other configurations of HtmlWebpackPlugin</span>
+<span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  template<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">,</span> <span class="token string">'batch-rendering.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  filename<span class="token punctuation">:</span> <span class="token string">'batch-rendering.html'</span><span class="token punctuation">,</span>
+  chunks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'commons'</span><span class="token punctuation">,</span> <span class="token string">'batch-rendering'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token comment">// other configurations of HtmlWebpackPlugin</span></code></pre></div>
+<p>Finally, here is the regl application:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// batch-rendering.js</span>
+<span class="token keyword">import</span> <span class="token string">'../css/main.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'regl-canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> regl <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'regl'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  canvas<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+canvas<span class="token punctuation">.</span>width <span class="token operator">=</span> canvas<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+canvas<span class="token punctuation">.</span>height <span class="token operator">=</span> canvas<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span>
+
+<span class="token comment">// regl render command to draw a SINGLE triangle</span>
+<span class="token keyword">const</span> drawTriangle <span class="token operator">=</span> <span class="token function">regl</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  frag<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+  precision mediump float;
+
+  uniform vec4 color;
+
+  void main() {
+    gl_FragColor = color;
+  }
+  `</span></span><span class="token punctuation">,</span>
+
+  vert<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+  precision mediump float;
+
+  uniform float angle;
+  uniform vec2 offset;
+  attribute vec2 position;
+
+  float x, y, z, w;
+
+  void main() {
+    x = cos(angle) * position.x + sin(angle) * position.y + offset.x;
+    y = -sin(angle) * position.x + cos(angle) * position.y + offset.y;
+    z = 0.0;
+    w = 1.0;
+    gl_Position = vec4(x, y, z, w);
+  }
+  `</span></span><span class="token punctuation">,</span>
+
+  viewport<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    width<span class="token punctuation">:</span> canvas<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+    height<span class="token punctuation">:</span> canvas<span class="token punctuation">.</span>height<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  attributes<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// [x,y] positions of the 3 vertices (without the offset)</span>
+    position<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token operator">-</span><span class="token number">0.25</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+      <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+      <span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  uniforms<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Destructure context and pass only tick. Pass props just because we need</span>
+    <span class="token comment">// to pass a third argument: batchId, which gives the index of the regl</span>
+    <span class="token comment">// 'drawTriangle' render command.</span>
+    color<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> tick <span class="token punctuation">}</span><span class="token punctuation">,</span> props<span class="token punctuation">,</span> batchId<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> r <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>batchId<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>tick <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">3.0</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> g <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> tick<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> b <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.3</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> tick<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">0.8</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> alpha <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">,</span> alpha<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    angle<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> tick <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token number">0.01</span> <span class="token operator">*</span> tick<span class="token punctuation">,</span>
+    offset<span class="token punctuation">:</span> regl<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'offset'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// disable the depth buffer</span>
+  <span class="token comment">// http://learningwebgl.com/blog/?p=859</span>
+  depth<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    enable<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  count<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Here we register a per-frame callback to draw the whole scene</span>
+regl<span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// clear the color buffer</span>
+  regl<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// r, g, b, a</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/* In batch rendering a regl rendering command can be executed multiple times
+  by passing a non-negative integer or an array as the first argument.
+  The batchId is initially 0 and incremented each time the render command is
+  executed.
+  Note: this command draws a SINGLE triangle, but since we are passing an
+  array of 5 elements it is executed 5 times. */</span>
+  <span class="token function">drawTriangle</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// props0</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.15</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.15</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// props1...</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.15</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/batch-rendering-e7847fb39373d691e8878fda4257cf62-d5231.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 50.78459343794579%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABz0lEQVQoz62Sz2sTQRiGv9nZ3ZTE0LDdBi/WaLAIhVhPRRNb28SyjSJIodCkERovHkQLOdhCD70UCgVRRGjRm0IFD4pCwYMI/rj4Hwie9aIHj158nMwuJGBPIsMzO9/sN++8883I9sYGjfl5rjWbLC81erT6aBoWF1luNA6kbWgtLLC+soJMjI8jIv+FkXwemZ2atEFq0CczlSZTTZO9nGHwapZgLcfQeo70RAbtptApH+15ZuyilUKbddpx8Ezc1Tg1OopUKxUbONoh3As4xoilwBGG90N0deBgR76PDIeI1qhkbqxYNILlsg2UKMQR8q9C8i9DvJOedRAYcu0WsruLengf9fwp6uMb1LMnyMUIMU6VoSfY59DurBMHQ8LhK4qtd8KNHyVcvqEA5+dX1PYmcrwQ55kjK+PSChYKfYLmhyiJ6SY2DbY5tvc/n0at3kayh/46vkpKMFYqIRcm40vxusU2O2nX4BnEcFPjfNH4tzwGQokv4UQRvXMP/eAO+vEj9Nt93PevkbUOpUr5H5/Nzl3j+Tfy6zvyYg85d8bOHw0CZLXT4fz0NPV6nSiKeswlzBouJeNuzsxM/P30gWhrk8iUbO5smVqtxvV2mz/7JC3H2hkmngAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Five triangle with batch rendering and the frame loop"
+        title="Batch rendering"
+        src="/static/batch-rendering-e7847fb39373d691e8878fda4257cf62-fb8a0.png"
+        srcset="/static/batch-rendering-e7847fb39373d691e8878fda4257cf62-1a291.png 148w,
+/static/batch-rendering-e7847fb39373d691e8878fda4257cf62-2bc4a.png 295w,
+/static/batch-rendering-e7847fb39373d691e8878fda4257cf62-fb8a0.png 590w,
+/static/batch-rendering-e7847fb39373d691e8878fda4257cf62-d5231.png 701w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>GLSL? There is a loader for that!</h2>
+<p>I don’t know about you, but defining shaders with back ticks looks awful to me. It would be much better to write <code class="language-text">.glsl</code> files and then load them in a regl application. We could use linters and autocompletion, but even more importantly, we would avoid copy pasting the shaders in JS every single time we need them.</p>
+<p>Luckily with Webpack it’s pretty easy to fix this issue. There is a loader for that!</p>
+<p>Ok, so you need to do these things:</p>
+<ol>
+<li>add <code class="language-text">webpack-glsl-loader</code> to <code class="language-text">devDependencies</code></li>
+<li>create <code class="language-text">.glsl</code> files for the vertex shader and for the fragment shader</li>
+<li>configure webpack to load <code class="language-text">.glsl</code> files with <code class="language-text">webpack-glsl-loader</code></li>
+<li><code class="language-text">require</code> the shaders in the regl application</li>
+</ol>
+<p>As an example, we’ll remove the shader code between the back ticks in <code class="language-text">batch-rendering.js</code> and we’ll use the GLSL loader instead.</p>
+<p>Install the GLSL loader with <code class="language-text">yarn add --dev webpack-glsl-loader</code>.</p>
+<p>Create GLSL files for your shaders. Create <code class="language-text">src/glsl/vertex/batch.glsl</code> for the vertex shader and <code class="language-text">src/glsl/fragment/batch.glsl</code> for the fragment shader. You just have to copy and paste the code between the back ticks in <code class="language-text">batch-rendering.js</code>.</p>
+<p>Configure webpack to use <code class="language-text">webpack-glsl-loader</code> to load <code class="language-text">.glsl</code> files.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// webpack.config.js</span>
+<span class="token comment">// rule for .glsl files (shaders)</span>
+<span class="token punctuation">{</span>
+  test<span class="token punctuation">:</span> <span class="token regex">/\.glsl$/</span><span class="token punctuation">,</span>
+  use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      loader<span class="token punctuation">:</span> <span class="token string">'webpack-glsl-loader'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>Finally, <code class="language-text">require</code> your shaders in <code class="language-text">batch-rendering.js</code>.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// batch-rendering.js</span>
+<span class="token keyword">import</span> <span class="token string">'../css/main.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> vertexShader <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../glsl/vertex/batch.glsl'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fragmentShader <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../glsl/fragment/batch.glsl'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'regl-canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> regl <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'regl'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  canvas<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+canvas<span class="token punctuation">.</span>width <span class="token operator">=</span> canvas<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+canvas<span class="token punctuation">.</span>height <span class="token operator">=</span> canvas<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span>
+
+<span class="token comment">// regl render command to draw a SINGLE triangle</span>
+<span class="token keyword">const</span> drawTriangle <span class="token operator">=</span> <span class="token function">regl</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+
+  vert<span class="token punctuation">:</span> vertexShader<span class="token punctuation">,</span>
+  frag<span class="token punctuation">:</span> fragmentShader<span class="token punctuation">,</span>
+
+  viewport<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    width<span class="token punctuation">:</span> canvas<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+    height<span class="token punctuation">:</span> canvas<span class="token punctuation">.</span>height<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  attributes<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// [x,y] positions of the 3 vertices (without the offset)</span>
+    position<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token operator">-</span><span class="token number">0.25</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+      <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+      <span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  uniforms<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Destructure context and pass only tick. Pass props just because we need</span>
+    <span class="token comment">// to pass a third argument: batchId, which gives the index of the regl</span>
+    <span class="token comment">// 'drawTriangle' render command.</span>
+    color<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> tick <span class="token punctuation">}</span><span class="token punctuation">,</span> props<span class="token punctuation">,</span> batchId<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> r <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>batchId<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>tick <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">3.0</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> g <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> tick<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> b <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.02</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.3</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> tick<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">0.8</span> <span class="token operator">*</span> batchId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> alpha <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">,</span> alpha<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    angle<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> tick <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token number">0.01</span> <span class="token operator">*</span> tick<span class="token punctuation">,</span>
+    offset<span class="token punctuation">:</span> regl<span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'offset'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// disable the depth buffer</span>
+  <span class="token comment">// http://learningwebgl.com/blog/?p=859</span>
+  depth<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    enable<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  count<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Here we register a per-frame callback to draw the whole scene</span>
+regl<span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  regl<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// r, g, b, a</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/* In batch rendering a regl rendering command can be executed multiple times
+  by passing a non-negative integer or an array as the first argument.
+  The batchId is initially 0 and incremented each time the render command is
+  executed.
+  Note: this command draws a SINGLE triangle, but since we are passing an
+  array of 5 elements it is executed 5 times. */</span>
+  <span class="token function">drawTriangle</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// props0</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.15</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.15</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// props1...</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.15</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> offset<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h2>Hungarian notation?</h2>
+<p>On <a href="https://webglfundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html">WebGL Fundamentals</a> they say that it’s common practice to place a letter in front of the variables to indicate their type: <code class="language-text">u</code> for <code class="language-text">uniforms</code>, <code class="language-text">a</code> for <code class="language-text">attributes</code> and the <code class="language-text">v</code> for <code class="language-text">varyings</code>. I’m not a huge fan of this <a href="https://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation</a> though. I don’t think it really improves the readability of the code and I don’t think I will use it.</p>
+<h2>Conclusion</h2>
+<p>I plan to write several articles about regl in the near future. In this one we learned how to configure Webpack for regl applications. In the next one I will create a few examples with d3 and regl.</p>
+<p>Stay tuned!</p></div><hr class="sc-EHOje bNggbZ"/><div class="sc-bdVaJa KZwod"><p class="sc-bwzfXH ixHkGN"><img src="/static/profile-pic-a463b5971c9f7ac211fbe7bf4adb4a51.jpg" alt="Giacomo Debidda" style="float:left;margin-right:0.4375rem;margin-bottom:0;width:3.5rem;height:3.5rem"/>Written by <strong>Giacomo Debidda</strong>, Pythonista &amp; JS lover (D3, React). You can find me on <a href="https://twitter.com/jackdbd">Twitter</a> &amp;<!-- --> <a href="https://github.com/jackdbd">Github</a></p></div><ul class="sc-gzVnrw iysiNG"><li><a rel="prev" href="/a-5-minute-intro-to-hypothesis/">← <!-- -->A 5 minute Intro to Hypothesis</a></li><li><a rel="next" href="/reactive-dashboards-with-plotly-dash/">Reactive Dashboards with Plotly Dash<!-- --> →</a></li></ul></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"how-to-get-started-with-regl-and-webpack-301","path":"/how-to-get-started-with-regl-and-webpack/"};window.dataPath="523/path---how-to-get-started-with-regl-and-webpack-301-653-96jLno44AenoXYUFxtDLO0ZucQ";/*]]>*/</script><script src="/webpack-runtime-f203abf059d5dccbfdbd.js" async=""></script><script src="/app-f34260e0362362e939cc.js" async=""></script><script src="/component---src-templates-blog-post-js-67f46c4b2874750232a3.js" async=""></script><script src="/0-f03144f5dd3d439a1324.js" async=""></script></body></html>

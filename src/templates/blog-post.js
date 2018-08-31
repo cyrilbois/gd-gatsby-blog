@@ -39,7 +39,16 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     if (!post) {
-      console.warn('post', post, 'markdownRemark', this.props.data.markdownRemark, 'data', this.props.data, 'location', this.props.location)
+      console.warn(
+        'post',
+        post,
+        'markdownRemark',
+        this.props.data.markdownRemark,
+        'data',
+        this.props.data,
+        'location',
+        this.props.location
+      )
     }
 
     return (

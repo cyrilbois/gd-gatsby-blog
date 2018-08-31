@@ -17,7 +17,6 @@ def add_numbers(a, b):
 
 This function adds two numbers, so among other things you might want to check that the commutative property holds for all the inputs that the function receives. You create a file called `test_example.py` and start writing a simple unit test to prove it.
 
-
 ## A simple unit test
 
 ```python
@@ -36,10 +35,9 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-That's cool, but you actually didn't prove that the commutative property holds in general. You have just proved that *for this specific case* such property holds.
+That's cool, but you actually didn't prove that the commutative property holds in general. You have just proved that _for this specific case_ such property holds.
 
 You realize that the combination of `1.23` and `4.56` is a very tiny subset of the entire input space of numbers that your function can receive, so you write more tests.
-
 
 ## A common solution: write more test cases
 
@@ -52,10 +50,9 @@ You realize that the combination of `1.23` and `4.56` is a very tiny subset of t
 # more tests here...
 ```
 
-Not a huge gain. You have just proved that *for these other specific cases* that you wrote the commutative property holds. And obviously you don't want to write a million test cases by hand.
+Not a huge gain. You have just proved that _for these other specific cases_ that you wrote the commutative property holds. And obviously you don't want to write a million test cases by hand.
 
 Maybe you have heard about [fuzzing](https://en.wikipedia.org/wiki/Fuzzing), and you want to use it to create random test cases every time you run the test.
-
 
 ## A better solution: fuzzing and ddt
 
@@ -115,11 +112,10 @@ That's definitely a step in the right direction, but if you think about it we ar
 
 You have two options:
 
-1. find a way to generate *domain objects* that your function can accept. In this case the domain objects are the floats that `add_numbers` can receive.
-2. use hypothesis
+1.  find a way to generate _domain objects_ that your function can accept. In this case the domain objects are the floats that `add_numbers` can receive.
+2.  use hypothesis
 
 I don't know about you, but I'm going for the second one.
-
 
 ## The best solution: Hypothesis
 
@@ -147,7 +143,7 @@ WTF! How it that possible that this test fails, after I have tried 100 test case
 
 Luckily with hypothesis you can increase the verbosity level of your test by using the `@settings` decorator.
 
-Let's say you also want to test a specific test case: `a == 1.23` and `b == 4.56`. For this you can use the `@example` decorator. This is nice because now your test provides some *documentation* to anyone who wants to use the `add_numbers` function, and at the same time you are testing a specific case that you know about or that might be particularly hard to hit.
+Let's say you also want to test a specific test case: `a == 1.23` and `b == 4.56`. For this you can use the `@example` decorator. This is nice because now your test provides some _documentation_ to anyone who wants to use the `add_numbers` function, and at the same time you are testing a specific case that you know about or that might be particularly hard to hit.
 
 ```python
 # test_example.py
@@ -214,7 +210,7 @@ if __name__ == '__main__':
     test_add_numbers()
 ```
 
-But what if `add_numbers` could in fact receive `nan` or `inf` as inputs (a much more realistic assumption). In this case the test should be able to generate `nan` or `inf`, your function should raise specific exceptions that you will have to handle somewhere else in your application, and the test should not consider *such specific exceptions* as failures.
+But what if `add_numbers` could in fact receive `nan` or `inf` as inputs (a much more realistic assumption). In this case the test should be able to generate `nan` or `inf`, your function should raise specific exceptions that you will have to handle somewhere else in your application, and the test should not consider _such specific exceptions_ as failures.
 
 Here is how `example.py` might look:
 
@@ -261,10 +257,9 @@ This test will generate some `nan` and `inf` inputs, `add_numbers` will raise ei
 
 Can you really afford to reject `nan` as an input value for `add_numbers`? Maybe not. Let's say your code needs to sum two samples in a time series, and one sample of the time series is missing: `nan` would be a perfectly valid input for `add_numbers` in such case.
 
-
 ## References
 
-- [What is Property Based Testing?](http://hypothesis.works/articles/what-is-property-based-testing/)
-- [Getting started with Hypothesis](http://hypothesis.works/articles/getting-started-with-hypothesis/)
-- [Anatomy of a Hypothesis Based Test](http://hypothesis.works/articles/anatomy-of-a-test/)
-- [Evolving toward property-based testing with Hypothesis](http://hypothesis.works/articles/incremental-property-based-testing/)
+* [What is Property Based Testing?](http://hypothesis.works/articles/what-is-property-based-testing/)
+* [Getting started with Hypothesis](http://hypothesis.works/articles/getting-started-with-hypothesis/)
+* [Anatomy of a Hypothesis Based Test](http://hypothesis.works/articles/anatomy-of-a-test/)
+* [Evolving toward property-based testing with Hypothesis](http://hypothesis.works/articles/incremental-property-based-testing/)

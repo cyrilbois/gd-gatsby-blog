@@ -13,33 +13,31 @@ This time we are going to replace the Model once again, but instead of using a d
 
 Here are the links to the other articles in the series:
 
-1. [MVC pattern in Python: Introduction and BasicModel](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/)
-2. [MVC pattern in Python: SQLite](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-sqlite/)
-3. [MVC pattern in Python: Dataset](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-dataset/)
+1.  [MVC pattern in Python: Introduction and BasicModel](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/)
+2.  [MVC pattern in Python: SQLite](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-sqlite/)
+3.  [MVC pattern in Python: Dataset](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-dataset/)
 
-*All code was written in Python 3.5. If you are using Python 2.7 you should be able to run it with a few minor changes.*
+_All code was written in Python 3.5. If you are using Python 2.7 you should be able to run it with a few minor changes._
 
 ---
 
 Table of contents
 
-1. <a href="#intro">Introduction</a>
-2. <a href="#crud">CRUD</a>
-3. <a href="#postgres">Switch to PostgreSQL</a>
-4. <a href="#model">Model</a>
-5. <a href="#view-controller">View and Controller</a>
-6. <a href="#conclusion">Conclusion</a>
-
+1.  <a href="#intro">Introduction</a>
+2.  <a href="#crud">CRUD</a>
+3.  <a href="#postgres">Switch to PostgreSQL</a>
+4.  <a href="#model">Model</a>
+5.  <a href="#view-controller">View and Controller</a>
+6.  <a href="#conclusion">Conclusion</a>
 
 <a name="intro"><h2>Introduction</h2></a>
 First of all, if you haven't read the first article in the MVC series, I suggest you to read that one first, otherwise many of the things here will not make much sense. Moreover, you will need the code for the `View` and the `Controller`.
 
-Dataset is a small abstraction layer built on top of the most popular Python ORM, [SqlAlchemy](http://www.sqlalchemy.org/) (interestingly enough, on GitHub [Dataset](https://github.com/pudo/dataset/) has even more stars than [SqlAlchemy](https://github.com/zzzeek/sqlalchemy) itself!). I stumbled upon this project when I was playing around with [Kivy](https://kivy.org/#home) and I needed to store a few records. It was just a small application and I didn't want to use a database, so I thought about using the [JSON Storage](https://kivy.org/docs/api-kivy.storage.jsonstore.html) module of the Kivy framework itself. That worked, but I didn't like it too much, so I started looking for a better alternative. 
+Dataset is a small abstraction layer built on top of the most popular Python ORM, [SqlAlchemy](http://www.sqlalchemy.org/) (interestingly enough, on GitHub [Dataset](https://github.com/pudo/dataset/) has even more stars than [SqlAlchemy](https://github.com/zzzeek/sqlalchemy) itself!). I stumbled upon this project when I was playing around with [Kivy](https://kivy.org/#home) and I needed to store a few records. It was just a small application and I didn't want to use a database, so I thought about using the [JSON Storage](https://kivy.org/docs/api-kivy.storage.jsonstore.html) module of the Kivy framework itself. That worked, but I didn't like it too much, so I started looking for a better alternative.
 
 As they say in their [awesome documentation](https://dataset.readthedocs.io/en/latest/), with Dataset you can use databases just like you would use a JSON file or a NoSQL store. And the cool thing is that your code will stay basically the same, no matter which database engine you want to use (at this time Dataset supports SQLite, PostgreSQL and MySQL).
 
 In this article I will show you how to use SQLite and PostgreSQL with Dataset.
-
 
 <a name="crud"><h2>CRUD</h2></a>
 As we did last time, let's implement each CRUD functionality in the simplest way possible.
@@ -86,7 +84,7 @@ conn = dataset.connect('sqlite:///:memory:')
 
 `dataset.connect` returns an instance of class `Database`, an object that represents a SQL database with multiple tables, and opens a new connection to this database. No need to worry about connection timeouts or disconnections.
 
-Ok, now you need to create a table. Forget about SQL statements and Data Definition Language: with Dataset you have *automatic schema*, so you don't have to specify any datatype in advance.
+Ok, now you need to create a table. Forget about SQL statements and Data Definition Language: with Dataset you have _automatic schema_, so you don't have to specify any datatype in advance.
 
 ```python
 # dataset_backend.py
@@ -114,7 +112,7 @@ def create_table(conn, table_name):
 
 Here is the code for CRUD operations.
 
-*Create*
+_Create_
 
 ```python
 # dataset_backend.py
@@ -167,7 +165,7 @@ def insert_many(conn, items, table_name):
               .format([x['name'] for x in items], table.table.name, e))
 ```
 
-*Read*
+_Read_
 
 ```python
 # dataset_backend.py
@@ -216,7 +214,7 @@ def select_all(conn, table_name):
     return list(map(lambda x: dict(x), rows))
 ```
 
-*Update*
+_Update_
 
 ```python
 # dataset_backend.py
@@ -248,7 +246,7 @@ def update_one(conn, name, price, quantity, table_name):
             'Can\'t update "{}" because it\'s not stored in table "{}"'.format(name, table.table.name))
 ```
 
-*Delete*
+_Delete_
 
 ```python
 # dataset_backend.py
@@ -324,7 +322,6 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-
 
 <a name="postgres"><h2>Switch to PostgreSQL</h2></a>
 OK cool, now that we tested all CRUD operations on a SQLite database, let's try to switch to PostgreSQL.
@@ -414,7 +411,6 @@ you should be able to perform all CRUD operations on a PostgreSQL database, inst
 
 How cool is that? With a single line we completely switched database engine!
 
-
 <a name="model"><h2>Model</h2></a>
 Now that all CRUD operations are implemented as simple functions, creating a class for a Model that uses a SQLite database as persistence layer is pretty straightforward.
 
@@ -470,7 +466,6 @@ class ModelDataset(object):
             self.connection, name, table_name=self.item_type)
 ```
 
-
 <a name="view-controller"><h2>View and Controller</h2></a>
 `View` and `Controller` are completely **decoupled** from the `Model` (and between themselves), so you don't need to change anything in their implementation. If you need the code for these classes, see the [first article](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/) in the series.
 
@@ -507,9 +502,8 @@ if __name__ == '__main__':
     c.show_items()
 ```
 
-
 <a name="conclusion"><h2>Conclusion</h2></a>
-In this article we implemented an ORM-based backend for the *Model* component of the MVC architecture. Thanks to the Dataset package, we can switch from SQLite (maybe for *development*) to PostgreSQL (maybe for *production*) very easily.
+In this article we implemented an ORM-based backend for the _Model_ component of the MVC architecture. Thanks to the Dataset package, we can switch from SQLite (maybe for _development_) to PostgreSQL (maybe for _production_) very easily.
 
 Dataset is a really cool project and I strongly suggest you to check it out. You can go through the awesome [quickstart in 12 minutes](https://dataset.readthedocs.io/en/latest/quickstart.html).
 

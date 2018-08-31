@@ -17,17 +17,17 @@ A few months passed and I discovered a few more packages: [Bowtie](https://githu
 
 According to the [documentation](https://plot.ly/dash/introduction), "Dash is simple enough that you can bind a user interface around your Python code in an afternoon". In fact, for a simple dashboard with a dropdown menu as the input, and a time series as the output, you need [less than 50 lines of code](https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503).
 
-Dash allows you to create *reactive* web applications. This means that changes to *input* UI component/s trigger changes to an *output* UI component.
+Dash allows you to create _reactive_ web applications. This means that changes to _input_ UI component/s trigger changes to an _output_ UI component.
 
 The UI components are created with D3.js and WebGL, so they look amazing. And you get all of this without having to write any HTML/JS/CSS. Under the hood Dash converts React components (written in JavaScript) into Python classes that are compatible with the Dash ecosystem.
 
 The [getting started](https://plot.ly/dash/getting-started) is top-notch, so I suggest you to start from there if you want to try Dash out. Here I will briefly describe what I did for my app.
 
-![A GIF showing the Dash-Earthquakes Dash app](./demo.gif "Dash-Earthquakes")
-
+![A GIF showing the Dash-Earthquakes Dash app](./demo.gif 'Dash-Earthquakes')
 
 ## Imports
-Here are my import statements. `dash_html_components` are pure HTML components, and `dash_core_components` are the reactive components. You need to use *one or more* `Input` to trigger changes to a *single* `Output`.
+
+Here are my import statements. `dash_html_components` are pure HTML components, and `dash_core_components` are the reactive components. You need to use _one or more_ `Input` to trigger changes to a _single_ `Output`.
 
 ```python
 import os
@@ -70,7 +70,7 @@ py.sign_in(os.environ['PLOTLY_USERNAME'], os.environ['PLOTLY_API_KEY'])
 mapbox_access_token = os.environ.get('MAPBOX_ACCESS_TOKEN', 'mapbox-token')
 ```
 
-Here is how I initialize my Dash app. I create a Flask app first because I want to use a secret key. I don't think you can set a secret key directly when you instantiate the `Dash` class. 
+Here is how I initialize my Dash app. I create a Flask app first because I want to use a secret key. I don't think you can set a secret key directly when you instantiate the `Dash` class.
 
 ```python
 app_name = 'Dash Earthquakes'
@@ -79,8 +79,8 @@ server.secret_key = os.environ.get('SECRET_KEY', 'default-secret-key')
 app = Dash(name=app_name, server=server)
 ```
 
-
 ## Data
+
 I get the latest 4.5+ magnitude earthquakes from the [USGS](https://www.usgs.gov/) website with a basic, synchronous `GET` request.
 Next time I will try to make an asynchronous request with [asyncio](http://terriblecode.com/blog/asynchronous-http-requests-in-python/) or one of the following libraries: [grequests](https://github.com/kennethreitz/grequests), [asks](https://github.com/theelous3/asks), [curio-http](https://github.com/scribu/curio-http), [requests-futures](https://github.com/ross/requests-futures).
 
@@ -282,8 +282,8 @@ for css in external_css:
     app.css.append_css({'external_url': css})
 ```
 
-
 ## Conclusion
+
 I had a lot of fun in creating this app, and I'm sure there are many use-cases where a quick (reactive) web app is useful.
 I will keep using Dash for future projects. I also want to [write my own component](https://plot.ly/dash/plugins) to practice React.js a bit.
 

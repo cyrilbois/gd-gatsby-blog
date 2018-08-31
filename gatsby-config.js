@@ -6,7 +6,7 @@ module.exports = {
     twitter: 'jackdbd',
     description: "Giacomo Debidda's Personal Blog",
     siteUrl: 'https://www.giacomodebidda.com',
-    rssFeed: 'https://feed43.com/3566832732867236.xml',
+    rssFeed: 'https://www.giacomodebidda.com/rss.xml',
   },
   /*
     Use pathPrefix if your site is hosted at something other than the root of

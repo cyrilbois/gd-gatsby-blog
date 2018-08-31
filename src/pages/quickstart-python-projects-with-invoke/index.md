@@ -18,14 +18,14 @@ According to the documentation, Invoke is a task execution tool & library that p
 
 I wanted to create a series of tasks – well, one basically – that could automate the process of:
 
-1. create a directory and initialize a git repository inside
-2. setup a virtual environment a few dependencies (pylint, flake8)
-3. configure the virtual environment for Visual Studio Code
-4. configure the virtual environment for PyCharm
+1.  create a directory and initialize a git repository inside
+2.  setup a virtual environment a few dependencies (pylint, flake8)
+3.  configure the virtual environment for Visual Studio Code
+4.  configure the virtual environment for PyCharm
 
 I didn't manage to automate step 4, but the first three were fairly easy to deal with.
 
-*Note: if you want to follow along, install invoke with `pip install invoke` and create a `tasks.py` file.*
+_Note: if you want to follow along, install invoke with `pip install invoke` and create a `tasks.py` file._
 
 Let's start by importing invoke and defining a very simple task.
 
@@ -60,7 +60,7 @@ def message(ctx):
 
 The Context is the primary API endpoint, and encapsulates information about the state. As you can see, with Context.run you can run shell commands.
 
-You can declare tasks to be executed before and/or after a task. You can also define a help for any particular task. If present, you can read the help message by typing `invoke <task-name>  --help`.
+You can declare tasks to be executed before and/or after a task. You can also define a help for any particular task. If present, you can read the help message by typing `invoke <task-name> --help`.
 
 Here is the task that I'm currently using when I want to start a new Python project.
 
@@ -160,6 +160,7 @@ def _setup_pipenv(ctx, repo_dir):
     _create_python_module(ctx, repo_dir)
     _create_vscode_settings(ctx, repo_dir)
 ```
+
 I also wanted to create a simple `example.py` file, just to save a few characters when I start writing code. That thing beginning with `<<EOF` and ending with `EOF` is a [Here Document](http://tldp.org/LDP/abs/html/here-docs.html).
 
 ```python
@@ -220,8 +221,8 @@ EOF
     ctx.run(cmd)
 ```
 
-*Note: Oviously you don't need to set the `editor.rules`, but since I use it in all of my projects I decided to include it.*
-
+_Note: Oviously you don't need to set the `editor.rules`, but since I use it in all of my projects I decided to include it._
 
 ## Conclusion
+
 With Invoke you can also execute shell commands with `sudo`, create [namespaces](http://docs.pyinvoke.org/en/latest/getting_started.html#creating-namespaces) and use a [MockContext](http://docs.pyinvoke.org/en/latest/concepts/testing.html#use-mockcontext). I didn't need these features this time, but I think I will try them for more complex tasks. I really liked the clean API and the easy of use of Invoke.

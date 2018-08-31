@@ -12,7 +12,6 @@ readNext: "/pipenv/"
 
 The [documentation](http://virtualenvwrapper.readthedocs.io/en/latest/install.html) for this project is quite good, but here I wanted to write a reminder (mostly for me) about the configuration of this tool on a Linux server.
 
-
 ## Configuration
 
 You can install `virtualenwrapper` with `pip`:
@@ -23,9 +22,9 @@ pip install virtualenvwrapper
 
 Then you will need to create a (hidden) folder in your `home` directory and call it `.virtualenvs`.
 
-Lastly, you will need to configure your terminal to execute `virtualenvwrapper` commands. This is done by adding 2 lines of code to a bash configuration file. 
+Lastly, you will need to configure your terminal to execute `virtualenvwrapper` commands. This is done by adding 2 lines of code to a bash configuration file.
 
-Here's the **catch:
+Here's the \*\*catch:
 
 If you are working on your computer you have to add these 2 lines to your `~/.bashrc` file.
 
@@ -50,13 +49,11 @@ Thanks to [this answer on askubuntu](http://askubuntu.com/a/121075) I found out 
 
 If you want to know more about these bash files, see [here](http://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment).
 
-
 ## Hooks
 
-If you are already using `virtualenv` you will probably know the `source bin/activate` command. This is a *hook* that sets an environment variable called `VIRTUAL_ENV`, another one called `PYTHON_HOME` and a few others. The command `deactivate` is another hook that unset the same environment variables previously set.
+If you are already using `virtualenv` you will probably know the `source bin/activate` command. This is a _hook_ that sets an environment variable called `VIRTUAL_ENV`, another one called `PYTHON_HOME` and a few others. The command `deactivate` is another hook that unset the same environment variables previously set.
 
 `virtualenvwrapper` defines some additional hooks, like `postactivate` and `predeactivate`. You can use these hooks to set additional environment variables, set aliases, ect. See [here](https://gist.github.com/manuganji/9069466) for some examples that you might find useful.
-
 
 ## Most useful commands
 

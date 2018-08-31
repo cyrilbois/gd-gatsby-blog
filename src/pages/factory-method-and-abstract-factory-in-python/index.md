@@ -11,8 +11,8 @@ Factory Method and Abstract Factory are **creational** design patterns and allow
 
 A [concise answer on Stack Overflow](http://stackoverflow.com/a/4210168) pointed me in the right direction, suggesting me to focus on the intent of these patterns. So, let's see what problem Factory Method and Abstract Factory try to solve.
 
-
 ## Factory Method
+
 In Factory Method the client knows what she wants, but for some reason she can't create the object directly. The reasons vary case-by-case: maybe she wants to use a common interface instead of manually instantiating the class she requires, or maybe she would need to pass a huge set of parameters to the constructor. Most of the time the client wants a single object, and this pattern relieves her of the responsability of creating this object directly.
 
 Let's see a very simple example:
@@ -46,8 +46,8 @@ if __name__ == '__main__':
 
 Here the client knows that in the end she wants a bike or a car, but since these two classes are private she should not use them directly. Instead she will call `factory_method`, that will instantiate such classes for her. Here factory_method is just a function, and acts as a "virtual" constructor of either `_Car` or `_Bike`.
 
-
 ## Abstract Factory
+
 In Abstract Factory the client might not known what she wants, and how many objects she wants. This pattern provides an interface for creating families of related objects without the client having to specify the classes of the objects being created. In fact, the emphasys on families of related objects is the hallmark of the abstract factory pattern.
 
 Let's start from the client code, namely the main function.
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     main()
 ```
 
-The function `give_me_some_polygons` is the **interface** between the client and the factory (in this example I wanted to be flexible and pass multiple abstract factories to this function, but this is just a detail).  `give_me_some_polygons` calls the factory's `make_polygon` method a random number of times, and returns a list of products to the client.
+The function `give_me_some_polygons` is the **interface** between the client and the factory (in this example I wanted to be flexible and pass multiple abstract factories to this function, but this is just a detail). `give_me_some_polygons` calls the factory's `make_polygon` method a random number of times, and returns a list of products to the client.
 
 ```python
 def give_me_some_polygons(factories, color=None):

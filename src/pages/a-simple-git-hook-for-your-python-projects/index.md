@@ -10,7 +10,7 @@ A [git hook](http://githooks.com/) is a script that git executes before or after
 
 Git hooks can be really useful to enforce a certain policy on your commits, push your changes to a continuous integration server, or automatically deploy your code.
 
-I wanted to enforce a very simple policy for my commits: *no broken code should be deployed on the master branch*. So I wrote this small `pre-commit` hook:
+I wanted to enforce a very simple policy for my commits: _no broken code should be deployed on the master branch_. So I wrote this small `pre-commit` hook:
 
 ```shell
 #!/bin/sh
@@ -31,6 +31,6 @@ if [ "$current_branch" = "master" ]; then
 fi
 ```
 
-It's a simple *client side hook* that runs all of my Python tests before committing on `master`. I can still create a feature branch and commit broken code on that, but as soon as I try to merge the feature branch into master, all test run. If any of the tests fails I can't commit. Simple as that.
+It's a simple _client side hook_ that runs all of my Python tests before committing on `master`. I can still create a feature branch and commit broken code on that, but as soon as I try to merge the feature branch into master, all test run. If any of the tests fails I can't commit. Simple as that.
 
 Git hooks are language agnostic. I wrote this small hook as a shell script, but you can use other languages liek Perl, Ruby or Python. [Here](https://github.com/bahattincinic/python-git-hook/blob/master/pre-commit) is an example of a `pre-commit` hook in written in Python.

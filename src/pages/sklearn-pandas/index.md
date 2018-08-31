@@ -14,6 +14,7 @@ tags:
 In this blog post I will show you a simple example on how to use sklearn-pandas in a classification problem. I will use the Titanic dataset from Kaggle. You can find training set e test set [here](https://www.kaggle.com/c/titanic/data).
 
 ## Imports
+
 ```python
 import os
 import pandas as pd
@@ -30,6 +31,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 ```
 
 ## Data
+
 Kaggle provides separate files for training set e test set: `trains.csv` contains class labels (0 = dead; 1 = survived), while `test.csv` does not.
 
 If you want you can perform some basic EDA (Exploratory Data Analysis). Be careful of [data leakege](https://www.quora.com/Whats-data-leakage-in-data-science) though! Don't use test data to carry on EDA, otherwise you will be tempted to select some features or perform some operations based on what you see on the test data. Here I will concatenate training set and test set just to see the total number of samples and the missing values of the entire dataset. I will "touch" the test set only at the end, for prediction.
@@ -55,6 +57,7 @@ for feature in set(df_train.columns.values).difference(set(['Name'])):
 ```
 
 ## Features
+
 When working on a machine learning problem, feature engineering is manually [designing what the input x's should be](https://www.quora.com/What-is-feature-engineering/answer/Tomasz-Malisiewicz?srid=tdBp).
 
 With sklearn-pandas you can use the `DataFrameMapper` class to declare transformations and variable imputations.
@@ -63,15 +66,15 @@ With sklearn-pandas you can use the `DataFrameMapper` class to declare transform
 
 `None` means that no transformation will be applied to that variable.
 
-`LabelBinarizer` converts a categorical variable into a *dummy variable* (aka *binary variable*). A dummy variable is either 1 or 0, whether a condition is met or not (in pandas categorical variables can be converted into dummy variables with the method [get_dummies](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html)).
+`LabelBinarizer` converts a categorical variable into a _dummy variable_ (aka _binary variable_). A dummy variable is either 1 or 0, whether a condition is met or not (in pandas categorical variables can be converted into dummy variables with the method [get_dummies](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.get_dummies.html)).
 
-`Imputer` is a scikit-learn class that can perform NA imputation for quantitative variables, while `CategoricalImputer` is a sklearn-pandas class that works on categorical variables too. [Missing value imputation](https://en.wikipedia.org/wiki/Imputation_(statistics)) is a broad topic, and in other languages there are entire packages dedicated to it. For example, in R you can find [MICE](https://www.r-bloggers.com/imputing-missing-data-with-r-mice-package/) and [Amelia](https://github.com/IQSS/Amelia).
+`Imputer` is a scikit-learn class that can perform NA imputation for quantitative variables, while `CategoricalImputer` is a sklearn-pandas class that works on categorical variables too. [Missing value imputation](<https://en.wikipedia.org/wiki/Imputation_(statistics)>) is a broad topic, and in other languages there are entire packages dedicated to it. For example, in R you can find [MICE](https://www.r-bloggers.com/imputing-missing-data-with-r-mice-package/) and [Amelia](https://github.com/IQSS/Amelia).
 
 In a `DataFrameMapper` you can also provide a custom name for the transformed features – to be used instead of the automatically generated one – by specifying it as the third argument of the feature definition.
 
 The difference between specifying the column selector as `'column'` (as a simple string) and `['column']` (as a list with one element is the shape of the array that is passed to the transformer. In the first case, a one dimensional array will be passed, while in the second case it will be a 2-dimensional array with one column, i.e. a column vector.
 
-*Example:* with a simple string `Imputer()` will discard `NaN` values for the column `Age`, and the fitting process will fail because of a mismatch of the size of this array and the other arrays in the `DataFrame`.
+_Example:_ with a simple string `Imputer()` will discard `NaN` values for the column `Age`, and the fitting process will fail because of a mismatch of the size of this array and the other arrays in the `DataFrame`.
 
 ```python
 mapper = DataFrameMapper([
@@ -95,6 +98,7 @@ mapper = DataFrameMapper([
 ```
 
 ## Pipeline
+
 Now that the you defined the features you want to use, you can build a scikit-learn `Pipeline`. The first step of the Pipeline is the `mapper` you have just defined. The last step is a scikit-learn `Estimator` that will run the classification. In this case I chose a `RandomForestClassifier` with a basic configuration. Between these two steps you can define additional ones. For example, you might want to [z-normalize](https://en.wikipedia.org/wiki/Standard_score) your features with a `StandardScaler`.
 
 ```python
@@ -106,6 +110,7 @@ pipeline = Pipeline([
 ```
 
 ## Cross validation
+
 The pipeline is ready, so you can train your model. In order to provide several estimates of the model's accuracy you can use cross validation. scikit-learn provides the convenient function `cross_val_score` to do that, but you can also do it manually. Keep in mind that we are not touching the test set here: `xx_train` and `xx_test` are both part of the entire training set. We just split the entire training set to train it on `xx_train` and predict on `xx_test`.
 
 ```python
@@ -138,6 +143,7 @@ model = pipeline.fit(X=x_train, y=y_train)
 ```
 
 ## Predict
+
 Now that the model is trained we can finally predict data that we have never seen before (i.e. the test set).
 
 ```python
@@ -149,6 +155,7 @@ print(predictions)
 ```
 
 ## The entire script
+
 Here is the entire script:
 
 ```python

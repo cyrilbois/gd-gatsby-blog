@@ -9,23 +9,23 @@ tags:
 
 I struggled quite a bit with the Bridge pattern. The idea itself is rather simple, decouple an interface from its implementation, but I couldn't think about a simple, yet "real life" example of this pattern.
 
-
 ## A Bridge between two class hierarchies
-The purpose of the Bridge pattern is to split a concept into two independent class hierarchies. These two class hierarchies are usually called *Interface* (or *Handle*, or *Abstraction*) and *Implementation* (or *Body*).
+
+The purpose of the Bridge pattern is to split a concept into two independent class hierarchies. These two class hierarchies are usually called _Interface_ (or _Handle_, or _Abstraction_) and _Implementation_ (or _Body_).
 
 A [classic example](https://en.wikipedia.org/wiki/Bridge_pattern#Java) of Bridge is used in the definition of shapes in an UI environment: one class hierarchy is responsible to define shapes, the other one to draw them on the screen.
 
-Bridge achieves the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) between orthogonal class hierarchies via *composition*: the interface object encapsulates an instance of an Implementation class. The Interface class is used directly by the client, but the actual work is done in the Implementation class. The client interacts with the interface object, and doesn't have to deal with the details of the different implementations. It's the interface object that delegates all requests to the implementation object it encapsulates.
+Bridge achieves the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) between orthogonal class hierarchies via _composition_: the interface object encapsulates an instance of an Implementation class. The Interface class is used directly by the client, but the actual work is done in the Implementation class. The client interacts with the interface object, and doesn't have to deal with the details of the different implementations. It's the interface object that delegates all requests to the implementation object it encapsulates.
 
 > Decouple an abstraction from its implementation so that the two can vary independently.
 
-
 ## A simple, yet real world use-case
+
 As I said at the beginning, it wasn't easy for me to find a simple real-life scenario where I would use this pattern. I didn't want to reuse the shape-draw example, and the first attempts I made where either too trivial or they were missing the point.
 
 Then I though about A/B testing.
 
-Let's say that you want to build a news website and you want to show different content for different users. You want to give paid users full access to articles, without any ads. At the same time, you want to give free users some excerpts from the articles, with some ads on the page. Finally, you want to show a [*call to action*](https://en.wikipedia.org/wiki/Call_to_action_(marketing)) to all free users, so you can hopefully convert them to paid users.
+Let's say that you want to build a news website and you want to show different content for different users. You want to give paid users full access to articles, without any ads. At the same time, you want to give free users some excerpts from the articles, with some ads on the page. Finally, you want to show a [_call to action_](<https://en.wikipedia.org/wiki/Call_to_action_(marketing)>) to all free users, so you can hopefully convert them to paid users.
 
 You know what to draw in the UI, and where to draw it, but you still can't decide on what to put in the call to action. Here is where A/B testing comes in: you can create two different implementations of the UI components, and by changing only the call to action you can decide which one is more effective.
 In a real life scenario the call to action could be a web component of some sort, maybe an element with a slightly different style, color, font size, etc. In this example it's just a different sentence for the two implementations.
@@ -55,7 +55,7 @@ The Interface is the UI of website. There are free users and paid users, so ther
 
 Ok, let's see some code!
 
-First, let's define an abstract class for the website. This is the *abstraction of the Interface* (or *abstraction of the Abstraction*).
+First, let's define an abstract class for the website. This is the _abstraction of the Interface_ (or _abstraction of the Abstraction_).
 
 ```python
 from abc import ABC, abstractmethod
@@ -77,7 +77,7 @@ class Website(ABC):
         pass
 ```
 
-Here is the free version of the website. It's a concrete Interface (or *refined Abstraction*).
+Here is the free version of the website. It's a concrete Interface (or _refined Abstraction_).
 
 ```python
 # Concrete Interface 1
@@ -201,9 +201,9 @@ import random
 random_implementation = random.choice([ImplementationA(), ImplementationB()])
 ```
 
-
 ## References
+
 These articles really helped me to understand the Bridge pattern:
 
-- [Bridge](https://sourcemaking.com/design_patterns/bridge)
-- [Design Patterns Simplified: The Bridge Pattern](https://simpleprogrammer.com/2015/06/08/design-patterns-simplified-the-bridge-pattern/)
+* [Bridge](https://sourcemaking.com/design_patterns/bridge)
+* [Design Patterns Simplified: The Bridge Pattern](https://simpleprogrammer.com/2015/06/08/design-patterns-simplified-the-bridge-pattern/)

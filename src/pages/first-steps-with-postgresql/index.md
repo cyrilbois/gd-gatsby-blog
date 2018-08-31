@@ -6,12 +6,12 @@ tags:
   - PostgreSQL
 ---
 
-In a Django project, PostgreSQL is probably the most popular choice when it comes to deploy a database for a production environment. In this article I'll go through the necessary steps to set it up on Ubuntu, along with a list of some basic commands to create databases and tables, as well as manage *roles* (i.e. users).
+In a Django project, PostgreSQL is probably the most popular choice when it comes to deploy a database for a production environment. In this article I'll go through the necessary steps to set it up on Ubuntu, along with a list of some basic commands to create databases and tables, as well as manage _roles_ (i.e. users).
 
 Here I will create a new role called `test_user` and a new database called `test_db`. You can pick different names if you want, but try to avoid mixing lowercase/uppercase. This is because if you create a user with a mix of lowercase and uppercase characters (e.g. `test_User`) you will need to type the double quotation marks every time.
 
-
 ## Dependencies
+
 To satisfy the dependencies of the operative system, open a terminal and type:
 
 ```shell
@@ -24,8 +24,8 @@ For the python dependencies, I'd suggest to create a virtual environment with [v
 pip install psycopg2
 ```
 
-
 ## The postgres shell
+
 `psql` is the interactive terminal for working with PostgreSQL. You can launch it with `sudo -i -u postgres` and then `psql`.
 
 Here are some useful commands when using the `psql` shell:
@@ -40,8 +40,8 @@ Here are some useful commands when using the `psql` shell:
 * **\conninfo** show some information about the current database connection (db name and user name);
 * **\q** exit the psql shell.
 
-
 ## Create a new user (aka role)
+
 PostgreSQL comes with a default user called `postgres`, which is the root user. Let's create a new user.
 
 As user `postgres`, exit the `psql` shell and type:
@@ -61,8 +61,8 @@ Shall the new role be allowed to create more new roles? (y/n) y
 
 If you want to check that the user was created correctly, go back to the `psql` shell and type `\du`.
 
-
 ## Assign a password to your new user
+
 In the `psql` shell, type:
 
 ```sql
@@ -71,8 +71,8 @@ ALTER USER test_user WITH PASSWORD 'test_password';
 
 Don't forget the semi-colon and [avoid double quotation marks](http://blog.lerner.co.il/quoting-postgresql/).
 
-
 ## Create a database
+
 In the `psql` shell, as user `postgres`, type:
 
 ```sql
@@ -80,7 +80,6 @@ CREATE DATABASE test_db;
 ```
 
 This command creates a new database called `test_db`. At this moment, only the user `postgres` can perform operations on this database.
-
 
 ## Create a table
 
@@ -92,8 +91,8 @@ CREATE TABLE items(
 );
 ```
 
-
 ## Assign privileges to `test_user`
+
 You need to allow your new user to modify the content of the `test_db` database. In order to do so you will need to grant him privileges on the database itself, and on the tables available in the database.
 
 ```sql
@@ -118,8 +117,8 @@ Ok, now `test_user` can connect to `test_db` and change its content. If he is th
 ALTER DATABASE test_db OWNER TO test_user;
 ```
 
-
 ## Connect to `test_db` with `test_user`
+
 You are still connected as user `postgres`. Exit the `psql` shell with `\q` and log in with `test_user` (you will need to type the password).
 
 ```shell
@@ -134,8 +133,8 @@ You are connected to database "test_db" as user "test_user" on host "localhost" 
 SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
 ```
 
-
 ## Cleanup
+
 Probably you don't want to keep the user, the database and the table we have just created, so let's remove them. Keep in mind that you cannot drop an open database, nor you can drop it if you are not the database owner or a superuser. So, exit the `psql` shell and re-log into it as user `postgres` (you just have to type `psql`).
 
 ```sql
@@ -144,8 +143,8 @@ DROP DATABASE test_db;
 DROP USER test_user;
 ```
 
-
 ## References
+
 Here are some additional resources:
 
 * [psql](http://postgresguide.com/utilities/psql.html)

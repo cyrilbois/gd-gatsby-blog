@@ -12,8 +12,8 @@ I have been wanting to play around with the [regl](https://github.com/regl-proje
 
 regl is a pretty new library, but it seems quite popular among data visualization practitioners. [Jim Vallandingham](http://vallandingham.me/regl_intro.html) and [Peter Beshai](https://peterbeshai.com/beautifully-animate-points-with-webgl-and-regl.html) wrote really nice tutorials about regl, and Nadieh Bremer created the stunning visualization ["A breathing Earth"](https://bl.ocks.org/nbremer/1acc6c95e3bb374dc78329e94f85a9b0).
 
-
 ## regl and WebGL
+
 Before starting to learn about regl, you need some basic knowledge about WebGL, the low level API to draw 3D graphics in the browser, and its [graphics pipeline (aka rendering pipeline)](http://tsherif.github.io/webgl-presentation/#/). [This article on WebGL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-how-it-works.html) does a great job in explaining what WebGL is:
 
 > WebGL is just a rasterization engine. It draws points, lines, and triangles based on code you supply.
@@ -26,13 +26,13 @@ regl is **functional abstration** of WebGL. It simplifies WebGL programming by r
 
 In regl there are two fundamentals abstractions: **resources** and **commands**.
 
-- A resource is a handle to something that you load on the GPU, like a texture.
-- A command is a complete representation of the WebGL state required to perform some draw call. It wraps it up and packages it into a single reusable function.
+* A resource is a handle to something that you load on the GPU, like a texture.
+* A command is a complete representation of the WebGL state required to perform some draw call. It wraps it up and packages it into a single reusable function.
 
 In this article I will only talk about [commands](http://regl.party/api#commands).
 
-
 ## Project structure and boilerplate
+
 I found out that if I want to learn a new technology/library/tool I have to play around with it, so I created a repo and I called it [regl-playground](https://github.com/jackdbd/regl-playground).
 
 Let's start defining the structure for this repo. Here is the root directory:
@@ -150,37 +150,43 @@ Then, create a minimal CSS file in `src/css`.
 ```css
 /* main.css */
 h1 {
-  color: #0B4192;
+  color: #0b4192;
 }
 ```
+
 And the Javascript files. We'll put the code in `one-shot-rendering.js` later on. For now, just import the CSS, so you can check that webpack is setup correctly.
 
 ```javascript
 // index.js
-import '../css/main.css';
+import '../css/main.css'
 ```
 
 ```javascript
 // one-shot-rendering.js
-import '../css/main.css';
+import '../css/main.css'
 ```
 
 Finally, the webpack configuration. I like to include `BundleAnalyzerPlugin` to check the bundle sizes.
 
 ```javascript
 // webpack.config.js
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     home: path.join(__dirname, 'src', 'js', 'index.js'),
-    'one-shot-rendering': path.join(__dirname, 'src', 'js', 'one-shot-rendering.js'),
+    'one-shot-rendering': path.join(
+      __dirname,
+      'src',
+      'js',
+      'one-shot-rendering.js'
+    ),
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -192,12 +198,8 @@ module.exports = {
       // rule for .js/.jsx files
       {
         test: /\.(js|jsx)$/,
-        include: [
-          path.join(__dirname, 'js', 'src'),
-        ],
-        exclude: [
-          path.join(__dirname, 'node_modules'),
-        ],
+        include: [path.join(__dirname, 'js', 'src')],
+        exclude: [path.join(__dirname, 'node_modules')],
         use: {
           loader: 'babel-loader',
         },
@@ -206,7 +208,10 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.join(__dirname, 'src', 'css'),
-        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
       },
     ],
   },
@@ -214,9 +219,11 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new BundleAnalyzerPlugin(),
-    new CleanWebpackPlugin(
-      ['dist'],
-      { root: __dirname, exclude: ['favicon.ico'], verbose: true }),
+    new CleanWebpackPlugin(['dist'], {
+      root: __dirname,
+      exclude: ['favicon.ico'],
+      verbose: true,
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'templates', 'index.html'),
       hash: true,
@@ -224,7 +231,12 @@ module.exports = {
       chunks: ['commons', 'home'],
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'templates', 'one-shot-rendering.html'),
+      template: path.join(
+        __dirname,
+        'src',
+        'templates',
+        'one-shot-rendering.html'
+      ),
       hash: true,
       filename: 'one-shot-rendering.html',
       chunks: ['commons', 'one-shot-rendering'],
@@ -251,7 +263,7 @@ module.exports = {
   performance: {
     hints: 'warning',
   },
-};
+}
 ```
 
 Ah, don't forget `.babelrc`!
@@ -264,20 +276,20 @@ Ah, don't forget `.babelrc`!
 
 Check that everything works by running `yarn run dev` and going to `http://localhost:8080/`.
 
-![The screen you should see if you visit localhost:8080](./webpack-configured.png "Webpack configured")
-
+![The screen you should see if you visit localhost:8080](./webpack-configured.png 'Webpack configured')
 
 ## Your first regl command
+
 As I said, the regl API provides you with two abstractions: resources and commands. A regl command wraps up all of the WebGL state associated with a draw call (either drawArrays or drawElements) and packages it into a single reusable function.
 
 Here is what you can define in a regl command:
 
-- vertex shader
-- fragment shader
-- uniforms
-- attributes
-- primitive
-- count
+* vertex shader
+* fragment shader
+* uniforms
+* attributes
+* primitive
+* count
 
 That's a lot of terminology! What are these things?
 
@@ -298,8 +310,7 @@ Global variables that you set in Javascript and that are broadcasted to both sha
 Data that points to Vertex Buffer Objects. Attributes are used in the vertex shader.
 
 **Primitive**.
-The primitive type for the [element](http://regl.party/api#elements) buffer. WebGL is mostly used to draw triangles, but you can also draw individual points. In regl the supported primitives are: `'points'`, `'lines'`, `'line strip'`, `'line loop'`, `'triangles'`, `'triangle strip'	` and `
-'triangle fan'`.
+The primitive type for the [element](http://regl.party/api#elements) buffer. WebGL is mostly used to draw triangles, but you can also draw individual points. In regl the supported primitives are: `'points'`, `'lines'`, `'line strip'`, `'line loop'`, `'triangles'`, `'triangle strip'` and `'triangle fan'`.
 
 **Count**.
 The number of vertices to draw (e.g. if you want to draw 2 triangles you need to set `count` to 6).
@@ -308,13 +319,12 @@ Ok, enough talking. Let's see some regl action! Open `one-shot-rendering.js` and
 
 ```javascript
 // one-shot-rendering.js
-import '../css/main.css';
+import '../css/main.css'
 
 // Create a full screen canvas element and a WebGLRenderingContext.
-const regl = require('regl')();
+const regl = require('regl')()
 
 const drawTriangle = regl({
-
   // The vertex shader tells the GPU where to draw the vertices.
   vert: `
   precision mediump float;
@@ -348,11 +358,7 @@ const drawTriangle = regl({
 
   // Now that the shaders are defined, we pass the vertices to the GPU
   attributes: {
-    position: [
-      [1.0, -0.75],
-      [0.0, 0.0],
-      [-1.0, -1.0],
-    ],
+    position: [[1.0, -0.75], [0.0, 0.0], [-1.0, -1.0]],
     color: regl.prop('rgbColors'),
   },
 
@@ -367,29 +373,25 @@ const drawTriangle = regl({
   primitive: 'points',
   // and we tell the GPU how many vertices to draw
   count: 3,
-});
+})
 
 // In one-shot rendering the command is executed once and immediately.
 drawTriangle({
   pointSize: 10.0,
   scale: 0.5,
-  rgbColors: [
-    [1.0, 0.0, 0.0],
-    [0.0, 1.0, 0.0],
-    [0.0, 0.0, 1.0],
-  ],
-});
+  rgbColors: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]],
+})
 ```
 
 Run `yarn run dev` and go to `http://localhost:8080/`. You should see something like this:
 
-![One-shot rendering: three points at localhost:8080](./one-shot-rendering-points.png "Three points")
+![One-shot rendering: three points at localhost:8080](./one-shot-rendering-points.png 'Three points')
 
 Well... not that exciting you might say. All that code for three points on the screen?
 
 Ok, let's try changing the line `primitive: 'points'`. You can either remove it or replace `'points'` with `'triangle'` (the default primitive). Now you should see this:
 
-![One-shot rendering: a triangle at localhost:8080](./one-shot-rendering-triangle.png "A triangle")
+![One-shot rendering: a triangle at localhost:8080](./one-shot-rendering-triangle.png 'A triangle')
 
 That's better! Let's stop for a second and try to explain what's going on.
 
@@ -401,12 +403,12 @@ The line `const regl = require('regl')();` creates a full screen canvas element 
 
 Context and props can be accessed with `pointSize: (context, prop) => prop.pointSize,`, or even with a shorthand syntax: `regl.context('pixelRatio')` and `regl.prop('scale')`.
 
-![regl context](./context.png "The regl context")
+![regl context](./context.png 'The regl context')
 
 As you can see from the image, the `drawingBufferWidth` is equal to the `viewportWidth`, and the `drawingBufferHeight` is equal to the `viewportHeight`. However, this is true only because we created a `WebGLRenderingContext` without specifying any initialization argument for the regl contructor and because we didn't set the `viewport`.
 
-
 ## One canvas, two sizes
+
 When you think about the canvas for your regl/WebGL application you need to decide how big you want the canvas to be (e.g. full screen, a small portion of the web page, etc), and how many pixels you want to display.
 
 In order to illustrate this concept we need to make a few small [changes to the code](https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html).
@@ -439,19 +441,19 @@ canvas {
 The size of the canvas has nothing to do with how many pixels you want to have the canvas. For this, you need to modify the Javascript code. In `one-shot-rendering.js`, replace this line:
 
 ```javascript
-const regl = require('regl')();
+const regl = require('regl')()
 ```
 
 with this code:
 
 ```javascript
-const canvas = document.getElementById('regl-canvas');
+const canvas = document.getElementById('regl-canvas')
 const regl = require('regl')({
   canvas,
-});
+})
 // Set the size of the drawingbuffer (i.e. how many pixels are in the canvas)
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
+canvas.width = canvas.clientWidth
+canvas.height = canvas.clientHeight
 ```
 
 and in the `drawTriangle` command add the `viewport`:
@@ -465,10 +467,10 @@ viewport: {
 },
 ```
 
-![The canvas is no longer full screen](./canvas.png "The canvas")
-
+![The canvas is no longer full screen](./canvas.png 'The canvas')
 
 ## Batch rendering
+
 With [batch rendering](http://regl.party/api#batch-rendering) you can execute a regl command multiple times. The command is executed once for each element of the array passed as argument. Let's see it in action.
 
 Create a new HTML file called `batch-rendering.html`:
@@ -522,14 +524,14 @@ Finally, here is the regl application:
 
 ```javascript
 // batch-rendering.js
-import '../css/main.css';
+import '../css/main.css'
 
-const canvas = document.getElementById('regl-canvas');
+const canvas = document.getElementById('regl-canvas')
 const regl = require('regl')({
   canvas,
-});
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
+})
+canvas.width = canvas.clientWidth
+canvas.height = canvas.clientHeight
 
 // regl render command to draw a SINGLE triangle
 const drawTriangle = regl({
@@ -570,11 +572,7 @@ const drawTriangle = regl({
 
   attributes: {
     // [x,y] positions of the 3 vertices (without the offset)
-    position: [
-      -0.25, 0.0,
-      0.5, 0.0,
-      -0.1, -0.5,
-    ],
+    position: [-0.25, 0.0, 0.5, 0.0, -0.1, -0.5],
   },
 
   uniforms: {
@@ -582,11 +580,15 @@ const drawTriangle = regl({
     // to pass a third argument: batchId, which gives the index of the regl
     // 'drawTriangle' render command.
     color: ({ tick }, props, batchId) => {
-      const r = Math.sin(0.02 * ((0.1 + Math.sin(batchId)) * (tick + (3.0 * batchId))));
-      const g = Math.cos(0.02 * ((0.02 * tick) + (0.1 * batchId)));
-      const b = Math.sin(0.02 * (((0.3 + Math.cos(2.0 * batchId)) * tick) + (0.8 * batchId)));
-      const alpha = 1.0;
-      return [r, g, b, alpha];
+      const r = Math.sin(
+        0.02 * ((0.1 + Math.sin(batchId)) * (tick + 3.0 * batchId))
+      )
+      const g = Math.cos(0.02 * (0.02 * tick + 0.1 * batchId))
+      const b = Math.sin(
+        0.02 * ((0.3 + Math.cos(2.0 * batchId)) * tick + 0.8 * batchId)
+      )
+      const alpha = 1.0
+      return [r, g, b, alpha]
     },
     angle: ({ tick }) => 0.01 * tick,
     offset: regl.prop('offset'),
@@ -599,14 +601,14 @@ const drawTriangle = regl({
   },
 
   count: 3,
-});
+})
 
 // Here we register a per-frame callback to draw the whole scene
 regl.frame(() => {
   // clear the color buffer
   regl.clear({
     color: [0.0, 0.0, 0.0, 1.0], // r, g, b, a
-  });
+  })
 
   /* In batch rendering a regl rendering command can be executed multiple times
   by passing a non-negative integer or an array as the first argument.
@@ -620,24 +622,24 @@ regl.frame(() => {
     { offset: [0.15, 0.15] },
     { offset: [-0.5, 0.5] },
     { offset: [0.5, -0.5] },
-  ]);
-});
+  ])
+})
 ```
 
-![Five triangle with batch rendering and the frame loop](./batch-rendering.png "Batch rendering")
-
+![Five triangle with batch rendering and the frame loop](./batch-rendering.png 'Batch rendering')
 
 ## GLSL? There is a loader for that!
+
 I don't know about you, but defining shaders with back ticks looks awful to me. It would be much better to write `.glsl` files and then load them in a regl application. We could use linters and autocompletion, but even more importantly, we would avoid copy pasting the shaders in JS every single time we need them.
 
 Luckily with Webpack it's pretty easy to fix this issue. There is a loader for that!
 
 Ok, so you need to do these things:
 
-1. add `webpack-glsl-loader` to `devDependencies`
-2. create `.glsl` files for the vertex shader and for the fragment shader
-3. configure webpack to load `.glsl` files with `webpack-glsl-loader`
-4. `require` the shaders in the regl application
+1.  add `webpack-glsl-loader` to `devDependencies`
+2.  create `.glsl` files for the vertex shader and for the fragment shader
+3.  configure webpack to load `.glsl` files with `webpack-glsl-loader`
+4.  `require` the shaders in the regl application
 
 As an example, we'll remove the shader code between the back ticks in `batch-rendering.js` and we'll use the GLSL loader instead.
 
@@ -664,21 +666,20 @@ Finally, `require` your shaders in `batch-rendering.js`.
 
 ```javascript
 // batch-rendering.js
-import '../css/main.css';
+import '../css/main.css'
 
-const vertexShader = require('../glsl/vertex/batch.glsl');
-const fragmentShader = require('../glsl/fragment/batch.glsl');
+const vertexShader = require('../glsl/vertex/batch.glsl')
+const fragmentShader = require('../glsl/fragment/batch.glsl')
 
-const canvas = document.getElementById('regl-canvas');
+const canvas = document.getElementById('regl-canvas')
 const regl = require('regl')({
   canvas,
-});
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
+})
+canvas.width = canvas.clientWidth
+canvas.height = canvas.clientHeight
 
 // regl render command to draw a SINGLE triangle
 const drawTriangle = regl({
-
   vert: vertexShader,
   frag: fragmentShader,
 
@@ -691,11 +692,7 @@ const drawTriangle = regl({
 
   attributes: {
     // [x,y] positions of the 3 vertices (without the offset)
-    position: [
-      -0.25, 0.0,
-      0.5, 0.0,
-      -0.1, -0.5,
-    ],
+    position: [-0.25, 0.0, 0.5, 0.0, -0.1, -0.5],
   },
 
   uniforms: {
@@ -703,11 +700,15 @@ const drawTriangle = regl({
     // to pass a third argument: batchId, which gives the index of the regl
     // 'drawTriangle' render command.
     color: ({ tick }, props, batchId) => {
-      const r = Math.sin(0.02 * ((0.1 + Math.sin(batchId)) * (tick + (3.0 * batchId))));
-      const g = Math.cos(0.02 * ((0.02 * tick) + (0.1 * batchId)));
-      const b = Math.sin(0.02 * (((0.3 + Math.cos(2.0 * batchId)) * tick) + (0.8 * batchId)));
-      const alpha = 1.0;
-      return [r, g, b, alpha];
+      const r = Math.sin(
+        0.02 * ((0.1 + Math.sin(batchId)) * (tick + 3.0 * batchId))
+      )
+      const g = Math.cos(0.02 * (0.02 * tick + 0.1 * batchId))
+      const b = Math.sin(
+        0.02 * ((0.3 + Math.cos(2.0 * batchId)) * tick + 0.8 * batchId)
+      )
+      const alpha = 1.0
+      return [r, g, b, alpha]
     },
     angle: ({ tick }) => 0.01 * tick,
     offset: regl.prop('offset'),
@@ -720,13 +721,13 @@ const drawTriangle = regl({
   },
 
   count: 3,
-});
+})
 
 // Here we register a per-frame callback to draw the whole scene
 regl.frame(() => {
   regl.clear({
     color: [0.0, 0.0, 0.0, 1.0], // r, g, b, a
-  });
+  })
 
   /* In batch rendering a regl rendering command can be executed multiple times
   by passing a non-negative integer or an array as the first argument.
@@ -740,16 +741,16 @@ regl.frame(() => {
     { offset: [0.15, 0.15] },
     { offset: [-0.5, 0.5] },
     { offset: [0.5, -0.5] },
-  ]);
-});
+  ])
+})
 ```
 
-
 ## Hungarian notation?
+
 On [WebGL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html) they say that it's common practice to place a letter in front of the variables to indicate their type: `u` for `uniforms`, `a` for `attributes` and the `v` for `varyings`. I'm not a huge fan of this [Hungarian notation](https://en.wikipedia.org/wiki/Hungarian_notation) though. I don't think it really improves the readability of the code and I don't think I will use it.
 
-
 ## Conclusion
+
 I plan to write several articles about regl in the near future. In this one we learned how to configure Webpack for regl applications. In the next one I will create a few examples with d3 and regl.
 
 Stay tuned!

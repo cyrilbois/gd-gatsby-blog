@@ -10,16 +10,15 @@ readNext: "/virtual-environments-with-virtualenvwrapper/"
 
 When it comes to manage environments and dependencies in Python projects, a very popular combination includes [Virtualenvwrapper](https://www.giacomodebidda.com/virtual-environments-with-virtualenvwrapper/) to manage environments, and pip to install/remove Python packages. Of course, every time you start working on a project you need to remember to activate the virtual environment of that particular project. For example, with Virtualenvwrapper you would use `workon <your-python-project>`.
 
-A few weeks ago I found out about [Pipenv](http://docs.pipenv.org/en/latest/), an experimental project by Kenneth Reitz. While I was reading the documentation I couldn't help but notice how much Pipenv resembles the Javascript package manager [yarn](https://yarnpkg.com/lang/en/). With yarn — or [npm](https://en.wikipedia.org/wiki/Npm_(software)) — you have a single tool that you can use to install/remove packages **and** create/manage environments.
+A few weeks ago I found out about [Pipenv](http://docs.pipenv.org/en/latest/), an experimental project by Kenneth Reitz. While I was reading the documentation I couldn't help but notice how much Pipenv resembles the Javascript package manager [yarn](https://yarnpkg.com/lang/en/). With yarn — or [npm](<https://en.wikipedia.org/wiki/Npm_(software)>) — you have a single tool that you can use to install/remove packages **and** create/manage environments.
 
 In this post I will show you how to use Pipenv in two scenarios: when starting a new project, and when installing the dependencies of a pre-existing project.
 
-If you want to follow along, start with installing Pipenv *globally*:
+If you want to follow along, start with installing Pipenv _globally_:
 
 ```shell
 pip install pipenv
 ```
-
 
 ## Starting a new Python project
 
@@ -91,7 +90,7 @@ pip -V
 
 In my case `WORKON_HOME` is `/home/jack/.virtualenvs/`, that's why the output of `pipenv --venv` is `/home/jack/.virtualenvs/my-dummy-repo-zmrIuv74`.
 
-*Note:* you can also activate, deactivate, remove this virtual environment with the same commands you would use for Virtualenvwrapper: `workon <your-virtual-enviroment>`, `deactivate`, `rmvirtualenv <your-virtual-enviroment>`.
+_Note:_ you can also activate, deactivate, remove this virtual environment with the same commands you would use for Virtualenvwrapper: `workon <your-virtual-enviroment>`, `deactivate`, `rmvirtualenv <your-virtual-enviroment>`.
 
 Let's install some packages.
 
@@ -169,43 +168,44 @@ Now that alll dependencies are locked, let's have a look at the `Pipfile.lock` f
 
 ```json
 {
-    "_meta": {
-        "hash": {
-            "sha256": "a770116c27db7e68723c431e7a00bc50e32d6ae6c719998e01a332da646757b6"
-        },
-        "requires": {},
-        "sources": [
-            {
-                "url": "https://pypi.python.org/simple",
-                "verify_ssl": true
-            }
-        ]
+  "_meta": {
+    "hash": {
+      "sha256":
+        "a770116c27db7e68723c431e7a00bc50e32d6ae6c719998e01a332da646757b6"
     },
-    "default": {
-        "numpy": {
-            "version": "==1.13.1"
-        },
-        "pandas": {
-            "version": "==0.20.3"
-        },
-        "python-dateutil": {
-            "version": "==2.6.1"
-        },
-        "pytz": {
-            "version": "==2017.2"
-        },
-        "requests": {
-            "version": "==2.13.0"
-        },
-        "six": {
-            "version": "==1.10.0"
-        }
+    "requires": {},
+    "sources": [
+      {
+        "url": "https://pypi.python.org/simple",
+        "verify_ssl": true
+      }
+    ]
+  },
+  "default": {
+    "numpy": {
+      "version": "==1.13.1"
     },
-    "develop": {
-        "ddt": {
-            "version": "==1.1.1"
-        }
+    "pandas": {
+      "version": "==0.20.3"
+    },
+    "python-dateutil": {
+      "version": "==2.6.1"
+    },
+    "pytz": {
+      "version": "==2017.2"
+    },
+    "requests": {
+      "version": "==2.13.0"
+    },
+    "six": {
+      "version": "==1.10.0"
     }
+  },
+  "develop": {
+    "ddt": {
+      "version": "==1.1.1"
+    }
+  }
 }
 ```
 
@@ -230,16 +230,16 @@ Uninstalling requests-2.13.0:
 Environment now purged and fresh!
 Pipfile found at /home/jack/Repos/my-dummy-repo/Pipfile. Considering this to be the project home.
 Installing dependencies from Pipfile.lock...
-Requirement already satisfied: six==1.10.0 in /home/jack/.virtualenvs/my-dummy-repo-zmrIuv74/lib/python3.6/site-packages 
-Collecting pytz==2017.2 
+Requirement already satisfied: six==1.10.0 in /home/jack/.virtualenvs/my-dummy-repo-zmrIuv74/lib/python3.6/site-packages
+Collecting pytz==2017.2
   Using cached pytz-2017.2-py2.py3-none-any.whl
-Collecting python-dateutil==2.6.1 
+Collecting python-dateutil==2.6.1
   Using cached python_dateutil-2.6.1-py2.py3-none-any.whl
-Collecting requests==2.13.0 
+Collecting requests==2.13.0
   Using cached requests-2.13.0-py2.py3-none-any.whl
-Collecting numpy==1.13.1 
+Collecting numpy==1.13.1
   Using cached numpy-1.13.1-cp36-cp36m-manylinux1_x86_64.whl
-Collecting pandas==0.20.3 
+Collecting pandas==0.20.3
   Using cached pandas-0.20.3-cp36-cp36m-manylinux1_x86_64.whl
 Installing collected packages: pytz, python-dateutil, requests, numpy, pandas
 Successfully installed numpy-1.13.1 pandas-0.20.3 python-dateutil-2.6.1 pytz-2017.2 requests-2.13.0
@@ -248,8 +248,7 @@ Successfully installed numpy-1.13.1 pandas-0.20.3 python-dateutil-2.6.1 pytz-201
 All dependencies are now up-to-date!
 ```
 
-*Note:* you **should** put `Pipfile` and `Pipfile.lock` under version control.
-
+_Note:_ you **should** put `Pipfile` and `Pipfile.lock` under version control.
 
 ## Installing dependencies of a pre-existing project
 
@@ -292,8 +291,8 @@ Finally, you can have a look at the packages available in this virtual environme
 pip list
 ```
 
-
 ## Pipenv and Travis CI
+
 I use Pipenv for [dash-earthquakes](https://github.com/jackdbd/dash-earthquakes), a very simple dashboard that displays the most recent eathquakes in the world (if you are interested in how I created this application, I wrote an [article](https://www.giacomodebidda.com/visualize-earthquakes-with-plotly-dash/) about it).
 
 I wanted to setup [Travis](https://travis-ci.org/) for this project, but it took me a while to figure out how to use pipenv in this environment. A possible solution comes from the [pipenv advanced documentation](http://docs.pipenv.org/en/latest/advanced.html): use a `Makefile` to install pipenv and run the tests.
@@ -330,8 +329,8 @@ script:
   - make test
 ```
 
-
 ## Pipen and PyUp
+
 I usually keep track of my Python dependencies with the [PyUp](https://pyup.io/) bot. Unfortunately, it seems that PyUp does not support pipenv at the moment.
 
 Of course you can activate the virtual environment and create a `requirements.txt` with `pip freeze > requirements.txt`, but you would still need to check that file in, to make it available for PyUp. That is confusing, because pipenv don't use requirement files.

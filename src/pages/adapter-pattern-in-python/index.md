@@ -7,30 +7,30 @@ tags:
   - Python
 ---
 
-Some weeks ago I decided to start studying design patterns and implementing them in Python. *Design patterns* and *Head first in design patterns* are constantly cited for being really good books. I added them to my reading list some time ago, but I still haven't managed to read them so far. Nonetheless, I've read several blog posts, articles on Wikipedia and answers on Stack Overflow and started implementing some of these patterns.
+Some weeks ago I decided to start studying design patterns and implementing them in Python. _Design patterns_ and _Head first in design patterns_ are constantly cited for being really good books. I added them to my reading list some time ago, but I still haven't managed to read them so far. Nonetheless, I've read several blog posts, articles on Wikipedia and answers on Stack Overflow and started implementing some of these patterns.
 
-Here we are going to see the *Adapter* pattern.
-
+Here we are going to see the _Adapter_ pattern.
 
 ## Adapter is a structural design pattern
-Structural design patterns are concerned with how classes and objects are *composed* to form larger structures. They help to use classes or methods which may not be usable directly, or they can ease the design by identifying a simple way to build relationships between entities.
 
-*Adapter* allows a *Client* to access otherwise not directly accessible functionalities of a *Supplier* . Adapter makes things work after they are designed: it produces an interface for a single object or class, and *adapts* such class in a way that a *Client* can use it.
+Structural design patterns are concerned with how classes and objects are _composed_ to form larger structures. They help to use classes or methods which may not be usable directly, or they can ease the design by identifying a simple way to build relationships between entities.
 
-> You have got *this*, and you **need** *that*.
+_Adapter_ allows a _Client_ to access otherwise not directly accessible functionalities of a _Supplier_ . Adapter makes things work after they are designed: it produces an interface for a single object or class, and _adapts_ such class in a way that a _Client_ can use it.
 
+> You have got _this_, and you **need** _that_.
 
 ## How do we implement the Adapter Pattern?
+
 There are two ways of implementing the Adapter pattern:
 
-1. Object Adapter
-2. Class Adapter
+1.  Object Adapter
+2.  Class Adapter
 
 The object adapter uses **encapsulation**, while the class adapter uses **multiple inheritance** (Python supports both encapsulation and multiple inheritance).
 
-Let's imagine that you have a smartphone (client) and you want to charge it. In order to charge a mobile phone you need a direct current (DC) and an input voltage of a few volts (from 3.7V to 5.2V I suppose), so you can't simply plug it directly into a wall socket (supplier), which provides an alternate current (AC) and outputs either 230V (in Europe) or 120V (in the US). Namely, without a phone charger (the Adapter) you **can't** charge your phone. 
+Let's imagine that you have a smartphone (client) and you want to charge it. In order to charge a mobile phone you need a direct current (DC) and an input voltage of a few volts (from 3.7V to 5.2V I suppose), so you can't simply plug it directly into a wall socket (supplier), which provides an alternate current (AC) and outputs either 230V (in Europe) or 120V (in the US). Namely, without a phone charger (the Adapter) you **can't** charge your phone.
 
-*In the following code I implemented both a European Socket class and and an American Socket class because they will be useful later on when explaining the Class Adapter approach. For now you can ignore the USSocket class.*
+_In the following code I implemented both a European Socket class and and an American Socket class because they will be useful later on when explaining the Class Adapter approach. For now you can ignore the USSocket class._
 
 ```python
 # Client
@@ -88,9 +88,9 @@ smartphone.charge(EUSocket.output_voltage)
 >>> Input voltage: 230V -- BURNING!!!
 ```
 
-
 ## 1. Object Adapter
-Obvioulsy, you need a phone charger to charge your smarthone. You can think of this phone charger as a completely independent *entity* from the smartphone and the wall socket. This new entity encapsulates client and supplier, and allows you to call the `charge` method without changing anything, neither in the Smartphone class, nor the Socket class. The phone charger converts an alternate current, high voltage power supply, into a direct current, low voltage power supply that can be used to charge the smartphone.
+
+Obvioulsy, you need a phone charger to charge your smarthone. You can think of this phone charger as a completely independent _entity_ from the smartphone and the wall socket. This new entity encapsulates client and supplier, and allows you to call the `charge` method without changing anything, neither in the Smartphone class, nor the Socket class. The phone charger converts an alternate current, high voltage power supply, into a direct current, low voltage power supply that can be used to charge the smartphone.
 
 ```python
 class EUAdapter(object):
@@ -129,11 +129,11 @@ smartphone.charge(EUAdapter.output_voltage)
 >>> Input voltage: 5V -- Charging...
 ```
 
-
 ## 2. Class Adapter
-You can also think that the combination smartphone + phone charger *defines* a unique system which can directly use the wall socket.
 
-You started with a `Smartphone` and a `Socket`, and now you want to define a system which inherits methods and attributes both from `Smartphone` and `Socket`. You have to use *multiple inheritance*.
+You can also think that the combination smartphone + phone charger _defines_ a unique system which can directly use the wall socket.
+
+You started with a `Smartphone` and a `Socket`, and now you want to define a system which inherits methods and attributes both from `Smartphone` and `Socket`. You have to use _multiple inheritance_.
 
 With this approach you don't create a new entity between the client and the supplier, but you redefine the client in a way that it can directly work with the supplier. You don't have a `Smartphone` any longer, you have a new entity which is the combination of a `Smartphone` and a `Socket`.
 
@@ -202,7 +202,6 @@ Here are the two classes you are dealing with:
     </table>
 </div>
 
-
 If you now take a `SmartphoneEUAdapter` instance and call `charge` with `EUSocket.output_voltage` as argument, you can see that you can charge your phone. However, if you take the same instance and call `charge` with `USSocket.output_voltage` as argument, you get a `CannotTransformVoltage` exception. In the latter case, you are using the wrong Adapter for a particular Supplier.
 
 ```python
@@ -214,16 +213,16 @@ smarthone_with_eu_adapter.charge(USSocket.output_voltage)
 >>> Can't transform 120-5V. This adapter transforms 230-5V.
 ```
 
-
 ## Object adapter or Class Adapter?
+
 There are two [strong reasons](http://stackoverflow.com/questions/5467005/adapter-pattern-class-adapter-vs-object-adapter) to prefer the Object Adapter over the Class Adapter:
 
-- loose coupling
-- multiple inheritance is tricky
+* loose coupling
+* multiple inheritance is tricky
 
 With the Object Adapter you have [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling), so the Client is not required to know anything about the Supplier. The Smartphone doesn't care where it gets its 5 volts. As long as it gets them, it will charge.
 
-With the Class Adapter you lose this property, because you have a new entity which is *defined* by the Client and the Supplier, and it works only for this specific type of Client and specific type of Supplier (e.g. SmartphoneEUAdapter doesn't work with a USSocket). This means that you have created an interface which allows you to use the Client and the Supplier, but where Client and Supplier are *strongly coupled*. Since you usually want to design interfaces to *uncouple* things, this is not a desired property.
+With the Class Adapter you lose this property, because you have a new entity which is _defined_ by the Client and the Supplier, and it works only for this specific type of Client and specific type of Supplier (e.g. SmartphoneEUAdapter doesn't work with a USSocket). This means that you have created an interface which allows you to use the Client and the Supplier, but where Client and Supplier are _strongly coupled_. Since you usually want to design interfaces to _uncouple_ things, this is not a desired property.
 
 Another reason why I decided to define two subclasses of Socket is to show that multiple inheritance can be tricky. As we can see in the code above, `SmartphoneAdapter` already contains all attributes and methods from `Smartphone` and `Socket`. However, since what you really want to use are the subclasses of `Socket`, namely `EUSocket` and `USSocket`, you need to re-inherit when you subclass `SmartphoneAdapter`. You can use a different strategy and create `SmartphoneEUAdapter` by directly inheriting from `Smartphone` and `EUSocket`, but then you would need to do the same for `SmartphoneUSAdapter`, which needs to inherit from `Smartphone` and `USSocket`. This will result in duplicate code, because you would need to write `transform_voltage` and `charge` twice.
 

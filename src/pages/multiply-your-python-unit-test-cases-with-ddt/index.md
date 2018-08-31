@@ -10,7 +10,7 @@ tags:
 DDT (Data-Driven Tests) is a small python module that allows you to multiply your unit test cases for free.
 The idea is pretty simple: you write a single test case and define some data samples, and DDT will generate a test case for each sample you provided.
 
-You might ask: *"Why is that useful?"*
+You might ask: _"Why is that useful?"_
 
 Consider the following example, a simple test case without using DDT.
 
@@ -78,9 +78,9 @@ It takes less than 2 minutes to read the [documentation](https://ddt.readthedocs
 
 The main reason why I like DDT is that it's very easy to use: just decorate a test class with the `@ddt` decorator, and every test case you want with one of the decorators provided by this module. Here are the decorators available:
 
-- `@data`: contains as many arguments as the values you want to feed to the test. This values can be numbers, strings, tuples, etc. In the case of tuples, a cool feature is that you can `@unpack` them.
-- `@file_data`: loads the test data from a JSON or YAML file.
-- `@idata`: generates a new data sample from a generator function you defined somewhere in the code. (At this moment this decorator is not mentioned in the documentation).
+* `@data`: contains as many arguments as the values you want to feed to the test. This values can be numbers, strings, tuples, etc. In the case of tuples, a cool feature is that you can `@unpack` them.
+* `@file_data`: loads the test data from a JSON or YAML file.
+* `@idata`: generates a new data sample from a generator function you defined somewhere in the code. (At this moment this decorator is not mentioned in the documentation).
 
 Here is an example with a generator function and `@idata`:
 
@@ -104,11 +104,10 @@ class TestDDTGenerator(unittest.TestCase):
 
 And here an example where the data is stored in an external file (JSON):
 
-*mydatafile.json*
+_mydatafile.json_
+
 ```json
-[
-  1, 2, 3, 4, 5
-]
+[1, 2, 3, 4, 5]
 ```
 
 ```python
@@ -141,6 +140,6 @@ class TestDDTDataUnpack(unittest.TestCase):
         self.assertIsInstance(some_integer, int)
 ```
 
-
 ## Alternatives to DDT
+
 The idea of test generators is not new, and there are at least two modules with similar capabilities: [genty](https://github.com/box/genty/blob/master/README.rst) and [data-provider](https://pypi.python.org/pypi/unittest-data-provider/1.0.0). I opted for DDT because it seems better documented and more pythonic, but genty looks pretty good too. In particular, the `@genty_repeat` decorator might be a nice feature that is not available in DDT(even if one could probably obtain the same functionality by using the [retrying](https://pypi.python.org/pypi/retrying) module).

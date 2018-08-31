@@ -13,26 +13,24 @@ This time we are going to replace the Model and implement a persistance layer wi
 
 Here are the links to the other articles in the series:
 
-1. [MVC pattern in Python: Introduction and BasicModel](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/)
-2. [MVC pattern in Python: SQLite](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-sqlite/)
-3. [MVC pattern in Python: Dataset](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-dataset/)
+1.  [MVC pattern in Python: Introduction and BasicModel](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/)
+2.  [MVC pattern in Python: SQLite](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-sqlite/)
+3.  [MVC pattern in Python: Dataset](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-dataset/)
 
-*All code was written in Python 3.5. If you are using Python 2.7 you should be able to run it with a few minor changes.*
+_All code was written in Python 3.5. If you are using Python 2.7 you should be able to run it with a few minor changes._
 
 ---
 
 Table of contents
 
-1. <a href="#intro">Introduction</a>
-2. <a href="#crud">CRUD</a>
-3. <a href="#model">Model</a>
-4. <a href="#view-controller">View and Controller</a>
-5. <a href="#conclusion">Conclusion</a>
-
+1.  <a href="#intro">Introduction</a>
+2.  <a href="#crud">CRUD</a>
+3.  <a href="#model">Model</a>
+4.  <a href="#view-controller">View and Controller</a>
+5.  <a href="#conclusion">Conclusion</a>
 
 <a name="intro"><h2>Introduction</h2></a>
 First of all, if you haven't read my previous article in the MVC series, I suggest you to read that one first, otherwise many of the things here will not make much sense. Moreover, you will need the code for the `View` and the `Controller`.
-
 
 <a name="crud"><h2>CRUD</h2></a>
 Let's review the inventory of a small grocery store. A typical product list would look like this:
@@ -157,7 +155,7 @@ def connect(func):
     return inner_func
 ```
 
-A SQLite database will close a connection automatically after a certain *timeout* (the default [timeout](https://docs.python.org/2/library/sqlite3.html#sqlite3.connect) is 5s). However, sometimes you may want to disconnect from a database explicitly.
+A SQLite database will close a connection automatically after a certain _timeout_ (the default [timeout](https://docs.python.org/2/library/sqlite3.html#sqlite3.connect) is 5s). However, sometimes you may want to disconnect from a database explicitly.
 
 ```python
 # sqlite_backend.py
@@ -174,7 +172,7 @@ Your table must contain data about `name`, `price` and `quantity` of every singl
 
 In SQLite there are both ["storage classes" and "datatypes"](https://sqlite.org/datatype3.html), but for the most part, "storage class" is indistinguishable from "datatype" and the two terms can be used interchangeably. So, which storage class should you assign to `name`, `price`, `quantity`? I think a good choice is: `TEXT`, `REAL` and `INTEGER`, respectively.
 
-*Note that here we are defining a table, so we use a [Data Definition Language](https://en.wikipedia.org/wiki/Data_definition_language) and [there is no need to explicitly commit](http://stackoverflow.com/questions/730621/do-ddl-statements-always-give-you-an-implicit-commit-or-can-you-get-an-implicit)*
+_Note that here we are defining a table, so we use a [Data Definition Language](https://en.wikipedia.org/wiki/Data_definition_language) and [there is no need to explicitly commit](http://stackoverflow.com/questions/730621/do-ddl-statements-always-give-you-an-implicit-commit-or-can-you-get-an-implicit)_
 
 ```python
 # sqlite_backend.py
@@ -223,7 +221,7 @@ def create_table(conn, table_name):
 
 Now that we finally have a table, let's start to implement the CRUD functionalities.
 
-Let's start with the *Create* functionality.
+Let's start with the _Create_ functionality.
 
 ```python
 # sqlite_backend.py
@@ -254,12 +252,11 @@ def insert_many(conn, items, table_name):
     except IntegrityError as e:
         print('{}: at least one in {} was already stored in table "{}"'
               .format(e, [x['name'] for x in items], table_name))
-
 ```
 
-As you can see, *Create* operations don't return anything. They just insert data into the database.
+As you can see, _Create_ operations don't return anything. They just insert data into the database.
 
-Let's now add a *Read* functionality, but first there is a small thing to do: if you remember, last time each item was represented as a Python `dict`;
+Let's now add a _Read_ functionality, but first there is a small thing to do: if you remember, last time each item was represented as a Python `dict`;
 
 ```python
 my_items = [
@@ -282,7 +279,7 @@ def tuple_to_dict(mytuple):
     return mydict
 ```
 
-In a SQL database, *Read* operations are performed with `SELECT` statements.
+In a SQL database, _Read_ operations are performed with `SELECT` statements.
 
 ```python
 # sqlite_backend.py
@@ -310,7 +307,7 @@ def select_all(conn, table_name):
     return list(map(lambda x: tuple_to_dict(x), results))
 ```
 
-Let's now add the *Update* operation.
+Let's now add the _Update_ operation.
 
 ```python
 # sqlite_backend.py
@@ -332,7 +329,7 @@ def update_one(conn, name, price, quantity, table_name):
             .format(name, table_name))
 ```
 
-And finally, *Delete*.
+And finally, _Delete_.
 
 ```python
 # sqlite_backend.py
@@ -413,7 +410,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 ```
 
 You can execute the `main` function with this line:
@@ -429,7 +425,6 @@ conn = connect_to_db(DB_name)  # physical database (i.e. a .db file)
 ```
 
 Th former creates an in-memory database, so it's faster and does not create any file. The latter creates a `.db` file that you can explore with tools like [DB Browser for SQLite](http://sqlitebrowser.org/) or even online viewers like [this one](http://inloop.github.io/sqlite-viewer/).
-
 
 <a name="model"><h2>Model</h2></a>
 Now that all CRUD operations are implemented as simple functions, creating a class for a Model that uses a SQLite database as persistence layer is pretty straightforward.
@@ -485,7 +480,6 @@ class ModelSQLite(object):
             self.connection, name, table_name=self.item_type)
 ```
 
-
 <a name="view-controller"><h2>View and Controller</h2></a>
 As I said last time, `View` and `Controller` are completely **decoupled** from the `Model` (and between themselves), so you don't need to change anything in their implementation. If you need the code for these classes, see the [first article](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/) in the series.
 
@@ -527,7 +521,6 @@ if __name__ == '__main__':
         # the sqlite backend understands that it needs to open a new connection
         c.show_items()
 ```
-
 
 <a name="conclusion"><h2>Conclusion</h2></a>
 In this article we replaced `ModelBasic` with `ModelSQLite`. Thanks to the SQLite database we gained a persistence layer for our application, and thanks to the modular architecture of the MVC pattern we kept the same functionality without having to change a single line of code in the `View` or in the `Controller`.

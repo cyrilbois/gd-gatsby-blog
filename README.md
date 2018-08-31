@@ -19,5 +19,5 @@ gatsby develop
 ## Deploy on [Netlify](https://app.netlify.com)
 
 ```shell
-gatsby build
+npm run deploy
 ```

@@ -1,7 +1,6 @@
 ---
 title: Export a GeoDataFrame to Spatialite
 date: '2018-08-21T21:00:03.284Z'
-layout: post
 path: '/export-a-geodataframe-to-spatialite/'
 ---
 

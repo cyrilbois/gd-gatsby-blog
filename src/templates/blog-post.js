@@ -29,6 +29,7 @@ const Ul = styled.ul`
 
 class BlogPostTemplate extends React.Component {
   render() {
+    // console.log('DATA', this.props.data)
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = get(
@@ -36,6 +37,10 @@ class BlogPostTemplate extends React.Component {
       'props.data.site.siteMetadata.description'
     )
     const { previous, next } = this.props.pageContext
+
+    if (!post) {
+      console.warn('post', post, 'markdownRemark', this.props.data.markdownRemark, 'data', this.props.data, 'location', this.props.location)
+    }
 
     return (
       <Layout location={this.props.location}>

@@ -1,7 +1,6 @@
 ---
 title: 12 Years of Fires in Sardinia
 date: '2018-08-22T19:00:03.284Z'
-layout: post
 path: '/12-years-of-fires-in-sardinia/'
 ---
 

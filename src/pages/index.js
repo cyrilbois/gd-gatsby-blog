@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -8,9 +8,9 @@ import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
 import Footer from '../components/Footer'
 
-const H3 = styled.h3`
-  margin-bottom: ${props => props.marginBottom};
-`
+// const H3 = styled.h3`
+//   margin-bottom: ${props => props.marginBottom};
+// `
 
 class BlogIndex extends React.Component {
   render() {
@@ -36,11 +36,11 @@ class BlogIndex extends React.Component {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <H3 marginBottom={rhythm(0.25)}>
+              <h3 style={{ marginBottom: rhythm(0.25) }}>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </H3>
+              </h3>
               <small>{`${node.frontmatter.date} | ${
                 node.timeToRead
               } min Read`}</small>

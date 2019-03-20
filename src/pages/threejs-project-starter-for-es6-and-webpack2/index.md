@@ -55,9 +55,9 @@ I found a [Webpack loader for glsl files](https://www.npmjs.com/package/webpack-
 
 So, here is a preview of this project starter. Here you can see a grid, the XYZ axes, a directional light, a spotlight, a particle system (the stars), a group of green cubes (it's treated as a single object) and an object that uses a custom `ShaderMaterial`.
 
-![A GIF file showing a preview of the starter project](https://raw.githubusercontent.com/jackaljack/threejs-es6-webpack-starter/master/preview.gif 'A scene with a spotlight, a directional light, a particle system, a custom material and several helpers.')
+![A GIF file showing a preview of the starter project](https://raw.githubusercontent.com/jackdbd/threejs-es6-webpack-starter/master/preview.gif 'A scene with a spotlight, a directional light, a particle system, a custom material and several helpers.')
 
-If you want to give Three.js a try, clone the repo [threejs-es6-webpack-starter](https://github.com/jackaljack/threejs-es6-webpack-starter) and have some 3D fun!
+If you want to give Three.js a try, clone the repo [threejs-es6-webpack-starter](https://github.com/jackdbd/threejs-es6-webpack-starter) and have some 3D fun!
 
 ## Additional resources
 

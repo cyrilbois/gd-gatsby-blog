@@ -226,4 +226,4 @@ With the Class Adapter you lose this property, because you have a new entity whi
 
 Another reason why I decided to define two subclasses of Socket is to show that multiple inheritance can be tricky. As we can see in the code above, `SmartphoneAdapter` already contains all attributes and methods from `Smartphone` and `Socket`. However, since what you really want to use are the subclasses of `Socket`, namely `EUSocket` and `USSocket`, you need to re-inherit when you subclass `SmartphoneAdapter`. You can use a different strategy and create `SmartphoneEUAdapter` by directly inheriting from `Smartphone` and `EUSocket`, but then you would need to do the same for `SmartphoneUSAdapter`, which needs to inherit from `Smartphone` and `USSocket`. This will result in duplicate code, because you would need to write `transform_voltage` and `charge` twice.
 
-You need the code? Grab it [here](https://github.com/jackaljack/design-patterns)!
+You need the code? Grab it [here](https://github.com/jackdbd/design-patterns)!

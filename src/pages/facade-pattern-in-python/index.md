@@ -186,4 +186,4 @@ if __name__ == '__main__':
     main()
 ```
 
-You need the code? Grab it [here](https://github.com/jackaljack/design-patterns)!
+You need the code? Grab it [here](https://github.com/jackdbd/design-patterns)!

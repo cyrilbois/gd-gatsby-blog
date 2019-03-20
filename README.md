@@ -1,27 +1,24 @@
 # gd-gatsby-blog
-My personal website.
 
+My personal website.
 
 ## Installation
 
 ```sh
-npm install  # avoid yarn, it might cause some issues with gatsby v2
+yarn
 ```
-
 
 ## Development
 
 ```shell
-gatsby develop
+yarn dev
 ```
-
 
 ## Deploy on [Netlify](https://app.netlify.com)
 
 ```shell
-npm run deploy
+yarn deploy
 ```
-
 
 ## Notes
 

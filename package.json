@@ -40,7 +40,7 @@
     "gatsby-remark-prismjs": "next",
     "gatsby-remark-responsive-iframe": "next",
     "gatsby-remark-smartypants": "next",
-    "gatsby-source-filesystem": "next",
+    "gatsby-source-filesystem": "2.1.0",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
     "lodash": "4.17.11",

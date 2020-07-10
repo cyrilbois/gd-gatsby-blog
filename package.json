@@ -43,7 +43,7 @@
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
-    "lodash": "4.17.11",
+    "lodash": "4.17.16",
     "prismjs": "1.15.0",
     "react": "16.8.4",
     "react-dom": "16.8.4",

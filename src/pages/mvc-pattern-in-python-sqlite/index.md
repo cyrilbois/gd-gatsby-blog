@@ -13,9 +13,9 @@ This time we are going to replace the Model and implement a persistance layer wi
 
 Here are the links to the other articles in the series:
 
-1.  [MVC pattern in Python: Introduction and BasicModel](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-introduction-and-basicmodel/)
-2.  [MVC pattern in Python: SQLite](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-sqlite/)
-3.  [MVC pattern in Python: Dataset](http://www.giacomodebidda.com/blog/mvc-pattern-in-python-dataset/)
+1.  [MVC pattern in Python: Introduction and BasicModel](http://www.giacomodebidda.com/mvc-pattern-in-python-introduction-and-basicmodel/)
+2.  [MVC pattern in Python: SQLite](http://www.giacomodebidda.com/mvc-pattern-in-python-sqlite/)
+3.  [MVC pattern in Python: Dataset](http://www.giacomodebidda.com/mvc-pattern-in-python-dataset/)
 
 _All code was written in Python 3.5. If you are using Python 2.7 you should be able to run it with a few minor changes._
 
@@ -424,7 +424,7 @@ or this one:
 conn = connect_to_db(DB_name)  # physical database (i.e. a .db file)
 ```
 
-Th former creates an in-memory database, so it's faster and does not create any file. The latter creates a `.db` file that you can explore with tools like [DB Browser for SQLite](http://sqlitebrowser.org/) or even online viewers like [this one](http://inloop.github.io/sqlite-viewer/).
+Th former creates an in-memory database, so it's faster and does not create any file. The latter creates a `.db` file that you can explore with tools like [DB Browser for SQLite](http://sqlitebrowser.org/) or even online viewers like [this one](http://inloop.github.io/sqlite-viewer/) or [this other one](https://extendsclass.com/sqlite-browser.html).
 
 <a name="model"><h2>Model</h2></a>
 Now that all CRUD operations are implemented as simple functions, creating a class for a Model that uses a SQLite database as persistence layer is pretty straightforward.
